@@ -44,6 +44,14 @@ public class PaxController : MonoBehaviour
         }
 	}
 	
+	void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "SafeZone")
+        {
+            Destroy(gameObject);
+        }
+    }
+	
 	IEnumerator Jump(float d)
     {
         yield return new WaitForSeconds(d * 0.1f);
