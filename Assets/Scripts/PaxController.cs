@@ -8,6 +8,8 @@ public class PaxController : MonoBehaviour
 	public int jumpForce = 0;
 	public int initialSpeed = 0;
 	public float delay = 0;
+	public bool standBy = false;
+	public bool isLeader = false;
 	
 	private Rigidbody2D rb2d;
 	private bool isGround;
@@ -22,10 +24,14 @@ public class PaxController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !standBy && isGround)
         {
 			StartCoroutine(Jump(delay));
 		}
+		if (!standBy){
+			rb2d.transform.Translate(Vector2.right * speed * Time.deltaTime);
+		}
+		
     }
 	
 	void OnCollisionEnter2D(Collision2D col)
@@ -48,13 +54,19 @@ public class PaxController : MonoBehaviour
     {
         if (collision.gameObject.tag == "SafeZone")
         {
-            Destroy(gameObject);
+			if (isLeader){
+				Debug.Log("Game Over");
+			}
+			else{
+				Destroy(gameObject);
+			} 
         }
     }
 	
 	IEnumerator Jump(float d)
     {
         yield return new WaitForSeconds(d * 0.1f);
+		Debug.Log(jumpForce);
 		rb2d.AddForce(Vector2.up * jumpForce * 100);
 	}
 }
