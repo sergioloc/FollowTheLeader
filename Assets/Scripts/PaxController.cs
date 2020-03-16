@@ -25,7 +25,7 @@ public class PaxController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !standBy && isGround)
         {
-			StartCoroutine(Jump(delay));
+			StartCoroutine(Jump());
 		}
 		if (!standBy){
 			rb2d.transform.Translate(Vector2.right * speed * Time.deltaTime);
@@ -68,9 +68,10 @@ public class PaxController : MonoBehaviour
         }
     }
 	
-	IEnumerator Jump(float d)
+	IEnumerator Jump()
     {
-        yield return new WaitForSeconds(d * 0.1f);
+        yield return new WaitForSeconds(delay * 0.1f);
 		rb2d.AddForce(Vector2.up * jumpForce * 100);
+        rb2d.AddForce(Vector2.right * 200f);
 	}
 }

@@ -22,9 +22,10 @@ public class LeaderController : MonoBehaviour
     {
         rb2d.transform.Translate(Vector2.right * speed * Time.deltaTime);
 		
-		if (Input.GetKeyDown(KeyCode.Space) && isGround)
+		if (Input.GetKeyDown(KeyCode.Space))
         {
 			rb2d.AddForce(Vector2.up * jumpForce * 100);
+            rb2d.AddForce(Vector2.right * 200f);
 		}
 		
 		if (Input.GetKeyDown(KeyCode.A))
