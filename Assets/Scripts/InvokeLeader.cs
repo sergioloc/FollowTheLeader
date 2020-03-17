@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class InvokeLeader : MonoBehaviour
 {
-	public GameObject morales;
+	public GameObject morales, jorge;
 	
     void Start()
     {
-        if (LeaderValue.value == 1){
+        if (GameValues.leader == 1){
 			morales.SetActive(true);
 		}
-		else if (LeaderValue.value == 2){
-			//morales.SetActive(true);
+		else if (GameValues.leader == 2){
+			jorge.SetActive(true);
 		}
     }
 }

@@ -23,9 +23,9 @@ public class PaxController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !standBy && isGround)
+        if (Input.GetKeyDown(KeyCode.Space) && !standBy)
         {
-			StartCoroutine(Jump());
+			Jump();
 		}
 		if (!standBy){
 			rb2d.transform.Translate(Vector2.right * speed * Time.deltaTime);
@@ -64,11 +64,15 @@ public class PaxController : MonoBehaviour
         if (collision.gameObject.tag == "SafeZone")
         {
 			Destroy(gameObject);
-
         }
     }
 	
-	IEnumerator Jump()
+    public void Jump(){
+        if (isGround)
+            StartCoroutine(WaitForJump());
+    }
+
+	IEnumerator WaitForJump()
     {
         yield return new WaitForSeconds(delay * 0.1f);
 		rb2d.AddForce(Vector2.up * jumpForce * 100);

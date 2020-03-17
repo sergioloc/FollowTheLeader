@@ -31,7 +31,6 @@ public class LeaderButton : MonoBehaviour
 	}
 	
 	public void ClickMorales(){
-		Debug.Log("ey");
 		if (isMoralesPressed){
 			animMorales.SetBool("isPressed", false);
 			isMoralesPressed = false;
@@ -41,6 +40,7 @@ public class LeaderButton : MonoBehaviour
 			selected = "Morales";
 			UpdateStatus();
 			isMoralesPressed = true;
+			isJorgePressed = false;
 			GameValues.leader = 1;
 		}
 	}
@@ -55,6 +55,7 @@ public class LeaderButton : MonoBehaviour
 			selected = "Jorge";
 			UpdateStatus();
 			isJorgePressed = true;
+			isMoralesPressed = false;
 			GameValues.leader = 2;
 		}
 	}

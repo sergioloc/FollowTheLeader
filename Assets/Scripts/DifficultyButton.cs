@@ -59,6 +59,9 @@ public class DifficultyButton : MonoBehaviour
 			selected = "Observer";
 			UpdateStatus();
 			isObserverPressed = true;
+			isBabyPressed = false;
+			isFullPressed = false;
+			isAlumnusPressed = false;
 			GameValues.difficulty = 1;
 		}
 	}
@@ -73,7 +76,10 @@ public class DifficultyButton : MonoBehaviour
 		else {
 			selected = "Baby";
 			UpdateStatus();
+			isObserverPressed = false;
 			isBabyPressed = true;
+			isFullPressed = false;
+			isAlumnusPressed = false;
 			GameValues.difficulty = 2;
 		}
 	}
@@ -88,7 +94,10 @@ public class DifficultyButton : MonoBehaviour
 		else {
 			selected = "Full";
 			UpdateStatus();
+			isObserverPressed = false;
+			isBabyPressed = false;
 			isFullPressed = true;
+			isAlumnusPressed = false;
 			GameValues.difficulty = 3;
 		}
 	}
@@ -103,6 +112,9 @@ public class DifficultyButton : MonoBehaviour
 		else {
 			selected = "Alumnus";
 			UpdateStatus();
+			isObserverPressed = false;
+			isBabyPressed = false;
+			isFullPressed = false;
 			isAlumnusPressed = true;
 			GameValues.difficulty = 4;
 		}

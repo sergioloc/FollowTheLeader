@@ -16,6 +16,19 @@ public class LeaderController : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
 		isGround = true;
+
+        if (GameValues.difficulty == 1){ //observer
+            speed = 10;
+        }
+        else if (GameValues.difficulty == 2){ //baby
+            speed = 15;
+        }
+        else if (GameValues.difficulty == 3){ //full
+            speed = 20;
+        }
+        else if (GameValues.difficulty == 4){ //alumni
+            speed = 25;
+        }
     }
 
     void Update()
@@ -24,8 +37,7 @@ public class LeaderController : MonoBehaviour
 		
 		if (Input.GetKeyDown(KeyCode.Space))
         {
-			rb2d.AddForce(Vector2.up * jumpForce * 100);
-            rb2d.AddForce(Vector2.right * 200f);
+			Jump();
 		}
 		
 		if (Input.GetKeyDown(KeyCode.A))
@@ -33,6 +45,13 @@ public class LeaderController : MonoBehaviour
 			Instantiate(projectile, shotPoint.position, shotPoint.rotation);
 		}
 		
+    }
+
+    public void Jump(){
+        if(isGround){
+            rb2d.AddForce(Vector2.up * jumpForce * 100);
+            rb2d.AddForce(Vector2.right * 200f);
+        }
     }
 	
 	void OnCollisionEnter2D(Collision2D col)
