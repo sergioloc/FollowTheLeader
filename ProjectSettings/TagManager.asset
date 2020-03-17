@@ -8,6 +8,7 @@ TagManager:
   - SafeZone
   - Horde
   - Virus
+  - Ammo
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - Player
   - Horde
   - Ground
-  - 
-  - 
+  - SafeZone
+  - Ammo
   - 
   - 
   - 
