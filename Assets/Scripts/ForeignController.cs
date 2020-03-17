@@ -27,14 +27,15 @@ public class ForeignController : MonoBehaviour
 		
 		if (type == 1){ //fast
 			paxController.delay = 1;
+			sec = Random.Range(0, 0.1f);
 		}
 		else if (type == 2){ //normal
 			paxController.delay = 2;
-			sec = 0.25f;
+			sec = Random.Range(0.15f, 0.35f);
 		}
 		else { //slow
 			paxController.delay = 3;
-			sec = 0.5f;
+			sec = Random.Range(0.4f, 0.6f);
 		}
 		StartCoroutine(Run(sec));
 	}

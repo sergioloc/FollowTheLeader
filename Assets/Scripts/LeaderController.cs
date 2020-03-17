@@ -11,6 +11,7 @@ public class LeaderController : MonoBehaviour
 	public Transform shotPoint;
 	private Rigidbody2D rb2d;
 	private bool isGround;
+    private float push = 200f;
 
     public Transform groundCheck;
     public float checkRadius;
@@ -27,12 +28,16 @@ public class LeaderController : MonoBehaviour
         }
         else if (GameValues.difficulty == 2){ //baby
             speed = 15;
+            rb2d.gravityScale = 6;
         }
         else if (GameValues.difficulty == 3){ //full
-            speed = 20;
+            speed = 18;
+            rb2d.gravityScale = 6;
         }
         else if (GameValues.difficulty == 4){ //alumni
-            speed = 25;
+            speed = 22;
+            jumpForce = 18;
+            rb2d.gravityScale = 7;
         }
     }
 
@@ -57,7 +62,7 @@ public class LeaderController : MonoBehaviour
     public void Jump(){
         if(isGround){
             rb2d.AddForce(Vector2.up * jumpForce * 100);
-            rb2d.AddForce(Vector2.right * 200f);
+            rb2d.AddForce(Vector2.right * push);
         }
     }
 
