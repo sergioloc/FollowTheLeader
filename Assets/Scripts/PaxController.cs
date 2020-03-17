@@ -68,8 +68,7 @@ public class PaxController : MonoBehaviour
     }
 	
     public void Jump(){
-        if (isGround)
-            StartCoroutine(WaitForJump());
+        StartCoroutine(WaitForJump());
     }
 
 	IEnumerator WaitForJump()

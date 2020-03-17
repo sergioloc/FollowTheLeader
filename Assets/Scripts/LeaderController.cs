@@ -11,6 +11,11 @@ public class LeaderController : MonoBehaviour
 	public Transform shotPoint;
 	private Rigidbody2D rb2d;
 	private bool isGround;
+
+    public Transform groundCheck;
+    public float checkRadius;
+    public LayerMask whatIsGround;
+    private bool isGrounded;
 	
     void Start()
     {
@@ -33,6 +38,8 @@ public class LeaderController : MonoBehaviour
 
     void Update()
     {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+        
         rb2d.transform.Translate(Vector2.right * speed * Time.deltaTime);
 		
 		if (Input.GetKeyDown(KeyCode.Space))
@@ -53,25 +60,14 @@ public class LeaderController : MonoBehaviour
             rb2d.AddForce(Vector2.right * 200f);
         }
     }
-	
-	void OnCollisionEnter2D(Collision2D col)
+
+	void OnTriggerEnter2D(Collider2D collision)
     {
-        if (col.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             isGround = true;
         }
-    }
-	
-	void OnCollisionExit2D(Collision2D col)
-	{
-		if (col.gameObject.tag == "Ground")
-        {
-            isGround = false;
-        }
-	}
-	void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Virus")
+        else if (collision.gameObject.tag == "Virus")
         {
             Debug.Log("Game Over");
         }
@@ -79,7 +75,11 @@ public class LeaderController : MonoBehaviour
 	
 	void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "SafeZone")
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGround = false;
+        }
+        else if (collision.gameObject.tag == "SafeZone")
         {
 			Debug.Log("Game Over");
         }
