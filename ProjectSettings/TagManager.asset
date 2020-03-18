@@ -9,6 +9,7 @@ TagManager:
   - Horde
   - Virus
   - Ammo
+  - DeadZone
   layers:
   - Default
   - TransparentFX

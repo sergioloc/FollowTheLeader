@@ -6,7 +6,7 @@ public class LeaderController : MonoBehaviour
 {
     
 	public int jumpForce = 0;
-	public int speed = 0;	
+	public int speed = 10;	
 	public GameObject projectile;
 	public Transform shotPoint;
 	private Rigidbody2D rb2d;
@@ -125,6 +125,10 @@ public class LeaderController : MonoBehaviour
                 Destroy(collision.gameObject);
                 currentAmmo++;
             }
+        }
+        else if (collision.gameObject.tag == "DeadZone")
+        {
+           Destroy(gameObject);
         }
     }
 	

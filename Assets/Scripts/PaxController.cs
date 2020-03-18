@@ -6,19 +6,17 @@ public class PaxController : MonoBehaviour
 {
 
 	public int jumpForce = 0;
-	public int initialSpeed = 0;
+	public int speed = 10;
 	public float delay = 0;
 	public bool standBy = false;
 	
 	private Rigidbody2D rb2d;
-	private bool isGround;
-	private int speed;
+	//private bool isGround;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-		isGround = true;
-		speed = initialSpeed;
+		SetDifficulty();
     }
 
     void Update()
@@ -29,26 +27,8 @@ public class PaxController : MonoBehaviour
 		}
 		if (!standBy){
 			rb2d.transform.Translate(Vector2.right * speed * Time.deltaTime);
-		}
-		
+		}	
     }
-	
-	void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.tag == "Ground")
-        {
-            isGround = true;
-        }
-    }
-	
-	void OnCollisionExit2D(Collision2D col)
-	{
-		if (col.gameObject.tag == "Ground")
-        {
-            isGround = false;
-        }
-	}
-	
 	
 	void OnTriggerEnter2D(Collider2D collision)
     {
@@ -57,6 +37,10 @@ public class PaxController : MonoBehaviour
             Destroy(collision.gameObject);
 				Destroy(gameObject);
         }
+        else if (collision.gameObject.tag == "DeadZone")
+        {
+           Destroy(gameObject);
+        }
     }
 	
 	void OnTriggerExit2D(Collider2D collision)
@@ -64,6 +48,25 @@ public class PaxController : MonoBehaviour
         if (collision.gameObject.tag == "SafeZone")
         {
 			Destroy(gameObject);
+        }
+    }
+
+    private void SetDifficulty(){
+        if (GameValues.difficulty == 1){ //observer
+            speed = 10;
+        }
+        else if (GameValues.difficulty == 2){ //baby
+            speed = 15;
+            rb2d.gravityScale = 6;
+        }
+        else if (GameValues.difficulty == 3){ //full
+            speed = 18;
+            rb2d.gravityScale = 6;
+        }
+        else if (GameValues.difficulty == 4){ //alumni
+            speed = 22;
+            jumpForce = 18;
+            rb2d.gravityScale = 7;
         }
     }
 	
