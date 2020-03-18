@@ -118,7 +118,7 @@ public class LeaderController : MonoBehaviour
         {
             Debug.Log("Game Over");
         }
-        else if (collision.gameObject.tag == "Ammo")
+        else if (collision.gameObject.tag == "Potion")
         {
             if (AddAmmo())
             {

@@ -8,8 +8,8 @@ TagManager:
   - SafeZone
   - Horde
   - Virus
-  - Ammo
   - DeadZone
+  - Potion
   layers:
   - Default
   - TransparentFX
