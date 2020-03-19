@@ -120,31 +120,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &596220984 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3680132552158810777, guid: 1e1b536ea277c194eb02e061c77e8b8c,
-    type: 3}
-  m_PrefabInstance: {fileID: 3680132552704560801}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &596220985 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3680132552158810776, guid: 1e1b536ea277c194eb02e061c77e8b8c,
     type: 3}
   m_PrefabInstance: {fileID: 3680132552704560801}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &596220989
+--- !u!114 &852596067 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3689514726673116815, guid: 1e1b536ea277c194eb02e061c77e8b8c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3680132552704560801}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 596220984}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3e7aabc20660e340b5b7d7f9589fb46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  next: ChooseLeader
 --- !u!1 &1081852556
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,13 +580,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3680132552158810779, guid: 1e1b536ea277c194eb02e061c77e8b8c,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680132552158810779, guid: 1e1b536ea277c194eb02e061c77e8b8c,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 596220989}
+      objectReference: {fileID: 852596067}
     - target: {fileID: 3680132552158810779, guid: 1e1b536ea277c194eb02e061c77e8b8c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ButtonPressed
+      value: GoWithAnimation
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680132552158810779, guid: 1e1b536ea277c194eb02e061c77e8b8c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689514726673116815, guid: 1e1b536ea277c194eb02e061c77e8b8c,
+        type: 3}
+      propertyPath: next
+      value: ChooseLeader
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e1b536ea277c194eb02e061c77e8b8c, type: 3}

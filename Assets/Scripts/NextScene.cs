@@ -12,16 +12,15 @@ public class NextScene : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
-
-    void Update()
-    {
-        
-    }
 	
-	public void ButtonPressed(){
+	public void GoWithAnimation(){
 		anim.SetTrigger("Click");
 		StartCoroutine(GoToScene());
 	}
+
+    public void GoWithoutAnimation(){
+        SceneManager.LoadScene(next);
+    }
 	
 	IEnumerator GoToScene()
     {

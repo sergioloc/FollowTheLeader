@@ -2663,7 +2663,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1859900050}
-        m_MethodName: ButtonPressed
+        m_MethodName: GoWithAnimation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2743,7 +2743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e7aabc20660e340b5b7d7f9589fb46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  next: SampleScene
+  next: GameScene
 --- !u!1001 &1950913633
 PrefabInstance:
   m_ObjectHideFlags: 0
