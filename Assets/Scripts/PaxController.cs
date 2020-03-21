@@ -8,7 +8,8 @@ public class PaxController : MonoBehaviour
 	public int jumpForce = 0;
 	public int speed = 10;
 	public float delay = 0;
-	public bool standBy = false;
+	public bool standBy = true;
+    public bool initialGroup = true;
 	
 	private Rigidbody2D rb2d;
 	//private bool isGround;
@@ -17,6 +18,9 @@ public class PaxController : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
 		SetDifficulty();
+        if (initialGroup)
+            StartCoroutine(StartRunning());
+
     }
 
     void Update()
@@ -78,5 +82,11 @@ public class PaxController : MonoBehaviour
         yield return new WaitForSeconds(delay * 0.1f);
 		rb2d.AddForce(Vector2.up * jumpForce * 100);
         rb2d.AddForce(Vector2.right * 200f);
+	}
+
+    IEnumerator StartRunning()
+    {
+        yield return new WaitForSeconds(2f);
+		standBy = false;
 	}
 }
