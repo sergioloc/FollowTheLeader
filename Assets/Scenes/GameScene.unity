@@ -150582,7 +150582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 16
   speed: 10
-  projectile: {fileID: 8968452483218657364, guid: b813fd0409dd3d944b2c76c5ca6296ec,
+  projectile: {fileID: 8614003815454358601, guid: f4447dead8538614cb487356d1996b92,
     type: 3}
   shotPoint: {fileID: 1481279078}
   groundCheck: {fileID: 1957737762}
@@ -151216,7 +151216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481279077}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.86, y: -1.47, z: 0}
+  m_LocalPosition: {x: 3.86, y: 0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 952704701}
