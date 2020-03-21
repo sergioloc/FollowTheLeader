@@ -1,0 +1,622 @@
+fileFormatVersion: 2
+guid: bfa7edd4fd5b5b842be28d75ba5cc865
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6519482211609779390
+    second: Cat_Idle_1
+  - first:
+      213: 1385303433935008574
+    second: Cat_Idle_2
+  - first:
+      213: 1084857401860261817
+    second: Cat_Idle_3
+  - first:
+      213: -2830888508249258191
+    second: Cat_Idle_4
+  - first:
+      213: 647469393836452682
+    second: Cat_Attack_6
+  - first:
+      213: -3475643877827781749
+    second: Cat_26
+  - first:
+      213: 4528571492876826612
+    second: Cat_Attack_3
+  - first:
+      213: -6365953978117368079
+    second: Cat_28
+  - first:
+      213: -4891171618847890832
+    second: Cat_29
+  - first:
+      213: 4536118818154837668
+    second: Cat_Spawn_4
+  - first:
+      213: -2321064083634948331
+    second: Cat_Spawn_3
+  - first:
+      213: -5210721929204838113
+    second: Cat_Spawn_2
+  - first:
+      213: 5726576620025587660
+    second: Cat_Spawn_1
+  - first:
+      213: 4528807037308982671
+    second: Cat_Spawn_5
+  - first:
+      213: -8245319533164181364
+    second: Cat_Spawn_6
+  - first:
+      213: 6480544853548486614
+    second: Cat_Spawn_7
+  - first:
+      213: -8090776999470804724
+    second: Cat_37
+  - first:
+      213: -7232521027535748977
+    second: Cat_Attack_5
+  - first:
+      213: 6519482211609779390
+    second: Cat_Attack_4
+  - first:
+      213: -5160327514734206321
+    second: Cat_Attack_1
+  - first:
+      213: 4885103838627432399
+    second: Cat_Attack_2
+  - first:
+      213: 8203764567131895801
+    second: Cat_Sleep_1
+  - first:
+      213: 7515657346475157012
+    second: Cat_Sleep_2
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cat_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 2780
+        width: 444
+        height: 730
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 515478b2cd87ef046b842a41bc846281
+      internalID: 6519482211609779390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 2787
+        width: 575
+        height: 723
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 877309fb58bd6b24884f38faaf53a0c8
+      internalID: 1385303433935008574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 1433
+        y: 2788
+        width: 647
+        height: 722
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26a72469c8717e94abd7b1aab1555e34
+      internalID: 1084857401860261817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 2211
+        y: 2790
+        width: 530
+        height: 720
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f81ba872a5361a542ae01d5d2921dd06
+      internalID: -2830888508249258191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Attack_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2099
+        width: 633
+        height: 679
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc34d2faac30004c8ece99fb13022dd
+      internalID: 647469393836452682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2773
+        width: 15
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 604f3851a3291944690b669e50333292
+      internalID: -3475643877827781749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 2099
+        width: 594
+        height: 677
+      alignment: 9
+      pivot: {x: 0.5442285, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 061b6b232ff6f154ba85bfb3b4fce23f
+      internalID: 4528571492876826612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Spawn_4
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 673
+        width: 270
+        height: 650
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0d37a396659e64478af7e5c8c56bca6
+      internalID: 4536118818154837668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Spawn_3
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 700
+        width: 181
+        height: 650
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50b818242cbef7e4889c73ef0e60848b
+      internalID: -2321064083634948331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Spawn_2
+      rect:
+        serializedVersion: 2
+        x: 1614
+        y: 788
+        width: 284
+        height: 650
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c3eb429bbb1524181d72a8f5be5253
+      internalID: -5210721929204838113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Spawn_1
+      rect:
+        serializedVersion: 2
+        x: 2367
+        y: 863
+        width: 244
+        height: 650
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4266903c11b00e4ba282774f0e64a9e
+      internalID: 5726576620025587660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Spawn_5
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 0
+        width: 248
+        height: 618
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b306be4e7d7e2c48843c0d8d4b59f1f
+      internalID: 4528807037308982671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Spawn_6
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 0
+        width: 516
+        height: 618
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eab0c8254b4a6e647a49885630bb65a8
+      internalID: -8245319533164181364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Spawn_7
+      rect:
+        serializedVersion: 2
+        x: 1436
+        y: 0
+        width: 636
+        height: 618
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fbda89ac04831146bfadc5a8f3062d7
+      internalID: 6480544853548486614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_37
+      rect:
+        serializedVersion: 2
+        x: 2174
+        y: 0
+        width: 571
+        height: 618
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5affe795868b0414ebfdd914b296e1be
+      internalID: -8090776999470804724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Attack_5
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 2099
+        width: 709
+        height: 677
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eacecdc4e68a1147836ffc3f26c3b4c
+      internalID: -7232521027535748977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 2099
+        width: 646
+        height: 677
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc5352921095454418d5d7d6b4702f4a
+      internalID: 6519482211609779390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 1379
+        width: 584
+        height: 677
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4eacdef54d5abb4ea2858bcc35a932e
+      internalID: -5160327514734206321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1379
+        width: 632
+        height: 677
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa41570f0f7139649b32e43f592c67c9
+      internalID: 4885103838627432399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Sleep_1
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 1664
+        width: 244
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0145cd89ad57ad54f97b52fb46a88236
+      internalID: 8203764567131895801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Sleep_2
+      rect:
+        serializedVersion: 2
+        x: 2309
+        y: 1664
+        width: 242
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 512a7bb37f597a940801a672962d6033
+      internalID: 7515657346475157012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 7a5912cbba8557d4abc80a4c7856b3c5
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

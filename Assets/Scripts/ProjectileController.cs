@@ -20,7 +20,7 @@ public class ProjectileController : MonoBehaviour
 	
 	void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Virus")
+        if (col.gameObject.tag == "Shadow")
         {
             Destroy(col.gameObject);
 			Destroy(gameObject);

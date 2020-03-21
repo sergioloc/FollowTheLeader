@@ -114,7 +114,7 @@ public class LeaderController : MonoBehaviour
         {
             isGround = true;
         }
-        else if (collision.gameObject.tag == "Virus")
+        else if (collision.gameObject.tag == "ShadowAttack")
         {
             Debug.Log("Game Over");
         }

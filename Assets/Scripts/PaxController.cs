@@ -32,10 +32,9 @@ public class PaxController : MonoBehaviour
 	
 	void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Virus")
+        if (collision.gameObject.tag == "ShadowAttack")
         {
-            Destroy(collision.gameObject);
-				Destroy(gameObject);
+			Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "DeadZone")
         {

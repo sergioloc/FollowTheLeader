@@ -7,9 +7,10 @@ TagManager:
   - Ground
   - SafeZone
   - Horde
-  - Virus
   - DeadZone
   - Potion
+  - Shadow
+  - ShadowAttack
   layers:
   - Default
   - TransparentFX
