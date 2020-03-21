@@ -38,10 +38,12 @@ public class PaxController : MonoBehaviour
     {
         if (collision.gameObject.tag == "ShadowAttack")
         {
+            GameValues.numPax--;
 			Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "DeadZone")
         {
+            GameValues.numPax--;
            Destroy(gameObject);
         }
     }
@@ -50,6 +52,7 @@ public class PaxController : MonoBehaviour
     {
         if (collision.gameObject.tag == "SafeZone")
         {
+            GameValues.numPax--;
 			Destroy(gameObject);
         }
     }

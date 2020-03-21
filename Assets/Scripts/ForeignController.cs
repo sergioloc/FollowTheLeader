@@ -5,6 +5,7 @@ using UnityEngine;
 public class ForeignController : MonoBehaviour
 {
 	private PaxController paxController;
+	private bool added = false;
 	
 	void Start(){
 		paxController = GetComponent<PaxController>();
@@ -18,6 +19,10 @@ public class ForeignController : MonoBehaviour
 			int type = Random.Range(1, 3); //fast, normal, slow
 			Debug.Log(type);
             setValues(type);
+			if (!added){
+				GameValues.numPax++;
+				added = true;
+			}
         }
 	}
 	

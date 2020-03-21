@@ -7,6 +7,7 @@ public class StartController : MonoBehaviour
     public GameObject blueHole, leader;
     void Start()
     {
+        GameValues.numPax = GameValues.initialNumPax;
         StartCoroutine(StartBlueHole());
     }
 

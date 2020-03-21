@@ -18,7 +18,7 @@ public class LeaderController : MonoBehaviour
     public LayerMask whatIsGround;
     private bool isGrounded;
 
-    public GameObject ammo1, ammo2, ammo3, ammo4;
+    public GameObject ammo1, ammo2, ammo3, ammo4, gameOver;
     public int currentAmmo = 0;
 	
     void Start()
@@ -116,7 +116,7 @@ public class LeaderController : MonoBehaviour
         }
         else if (collision.gameObject.tag == "ShadowAttack")
         {
-            Debug.Log("Game Over");
+            GameOver();
         }
         else if (collision.gameObject.tag == "Potion")
         {
@@ -128,7 +128,7 @@ public class LeaderController : MonoBehaviour
         }
         else if (collision.gameObject.tag == "DeadZone")
         {
-           Destroy(gameObject);
+           GameOver();
         }
     }
 	
@@ -140,7 +140,7 @@ public class LeaderController : MonoBehaviour
         }
         else if (collision.gameObject.tag == "SafeZone")
         {
-			Debug.Log("Game Over");
+			GameOver();
         }
     }
 
@@ -190,5 +190,10 @@ public class LeaderController : MonoBehaviour
             }
             currentAmmo--;
         }
+    }
+
+    private void GameOver(){
+        gameOver.SetActive(true);
+        Destroy(gameObject);
     }
 }
