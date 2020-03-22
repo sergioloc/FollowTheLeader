@@ -46,6 +46,10 @@ public class PaxController : MonoBehaviour
             GameValues.numPax--;
            Destroy(gameObject);
         }
+        else if (collision.gameObject.tag == "Win")
+        {
+           standBy = true;
+        }
     }
 	
 	void OnTriggerExit2D(Collider2D collision)

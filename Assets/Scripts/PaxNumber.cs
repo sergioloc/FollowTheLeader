@@ -14,7 +14,7 @@ public class PaxNumber : MonoBehaviour
     void Update()
     {
         if (GameValues.numPax < 1){
-            paxText.text = "PAX: " + GameValues.numPax.ToString();
+            paxText.text = "PAX: 0";
             GameOver();
         }
         else {

@@ -46,7 +46,7 @@ public class LeaderController : MonoBehaviour
 		
 		if (Input.GetKeyDown(KeyCode.A))
         {
-			ThrowAmmo();
+			Attack();
 		}
 		
     }
@@ -132,6 +132,10 @@ public class LeaderController : MonoBehaviour
         {
            GameOver();
         }
+        else if (collision.gameObject.tag == "Win")
+        {
+           speed = 0;
+        }
     }
 	
 	void OnTriggerExit2D(Collider2D collision)
@@ -171,7 +175,7 @@ public class LeaderController : MonoBehaviour
         return result;
     }
 
-    private void ThrowAmmo(){
+    public void Attack(){
         if (currentAmmo > 0){
             Instantiate(projectile, shotPoint.position, shotPoint.rotation);
             if (currentAmmo == 1)
