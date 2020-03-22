@@ -10,12 +10,18 @@ public class PaxController : MonoBehaviour
 	public float delay = 0;
 	public bool standBy = true;
     public bool initialGroup = true;
+
+    public Transform groundCheck;
+    public float checkRadius;
+    public LayerMask whatIsGround;
+    private bool isGrounded;
+    private bool isJumping;
 	
 	private Rigidbody2D rb2d;
-	//private bool isGround;
 
     void Start()
     {
+        isJumping = false;
         rb2d = GetComponent<Rigidbody2D>();
 		SetDifficulty();
         if (initialGroup)
@@ -25,6 +31,8 @@ public class PaxController : MonoBehaviour
 
     void Update()
     {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+
         if (Input.GetKeyDown(KeyCode.Space) && !standBy)
         {
 			Jump();
@@ -81,7 +89,11 @@ public class PaxController : MonoBehaviour
     }
 	
     public void Jump(){
-        StartCoroutine(WaitForJump());
+        if (isGrounded && !isJumping){
+            StartCoroutine(WaitForJump());
+            isJumping = true;
+            StartCoroutine(NotJumping());
+        }  
     }
 
 	IEnumerator WaitForJump()
@@ -95,5 +107,11 @@ public class PaxController : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 		standBy = false;
+	}
+
+    IEnumerator NotJumping()
+    {
+        yield return new WaitForSeconds(0.25f);
+		isJumping = false;
 	}
 }

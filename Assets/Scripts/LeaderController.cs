@@ -11,7 +11,6 @@ public class LeaderController : MonoBehaviour
 	public GameObject projectile;
 	public Transform shotPoint;
 	private Rigidbody2D rb2d;
-	private bool isGround;
     private float push = 200f;
 
     public Transform groundCheck;
@@ -26,7 +25,6 @@ public class LeaderController : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-		isGround = true;
         SetDifficulty();
         SetAmmo();
     }
@@ -36,6 +34,7 @@ public class LeaderController : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+        Debug.Log(isGrounded);
         
         rb2d.transform.Translate(Vector2.right * speed * Time.deltaTime);
 		
@@ -104,7 +103,7 @@ public class LeaderController : MonoBehaviour
     }
 
     public void Jump(){
-        if(isGround){
+        if(isGrounded){
             rb2d.AddForce(Vector2.up * jumpForce * 100);
             rb2d.AddForce(Vector2.right * push);
         }
@@ -112,11 +111,7 @@ public class LeaderController : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
-        {
-            isGround = true;
-        }
-        else if (collision.gameObject.tag == "ShadowAttack")
+        if (collision.gameObject.tag == "ShadowAttack")
         {
             GameOver();
         }
@@ -140,11 +135,7 @@ public class LeaderController : MonoBehaviour
 	
 	void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
-        {
-            isGround = false;
-        }
-        else if (collision.gameObject.tag == "SafeZone")
+        if (collision.gameObject.tag == "SafeZone")
         {
 			GameOver();
         }
