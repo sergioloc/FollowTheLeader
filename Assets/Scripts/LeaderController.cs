@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LeaderController : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class LeaderController : MonoBehaviour
     private bool isGrounded;
 
     public GameObject ammo1, ammo2, ammo3, ammo4, gameOver;
+    public Text description;
     public int currentAmmo = 0;
 	
     void Start()
@@ -193,6 +195,7 @@ public class LeaderController : MonoBehaviour
     }
 
     private void GameOver(){
+        description.text = "Your leader died!";
         gameOver.SetActive(true);
         Destroy(gameObject);
     }
