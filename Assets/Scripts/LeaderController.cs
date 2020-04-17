@@ -8,7 +8,7 @@ public class LeaderController : MonoBehaviour
     
 	public int jumpForce = 0;
 	public int speed = 10;	
-	public GameObject projectile;
+	public GameObject projectile, fireworks;
 	public Transform shotPoint;
 	private Rigidbody2D rb2d;
     private float push = 200f;
@@ -126,6 +126,7 @@ public class LeaderController : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Win")
         {
+            fireworks.SetActive(true);
            speed = 0;
         }
     }
