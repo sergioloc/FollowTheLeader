@@ -34,7 +34,6 @@ public class LeaderController : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
-        Debug.Log(isGrounded);
         
         rb2d.transform.Translate(Vector2.right * speed * Time.deltaTime);
 		
