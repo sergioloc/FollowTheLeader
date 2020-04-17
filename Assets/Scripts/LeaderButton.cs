@@ -4,54 +4,77 @@ using UnityEngine;
 
 public class LeaderButton : MonoBehaviour
 {
-	public Animator animMorales, animJorge;
-	private bool isMoralesPressed, isJorgePressed;
-	private string selected;
+	public Animator animMorales, animJorge, animMaria, animDani, animAdri, animRichi, animVicthor, animSandia, animCarlos, animAlan;
+	private bool isMoralesPressed, isJorgePressed, isMariaPressed, isDaniPressed, isAdriPressed, isRichiPressed, isVicthorPressed, isSandiaPressed, isCarlosPressed, isAlanPressed;
+	private Animator animPrev;
 	
     void Start()
     {
 		isMoralesPressed = false;
 		isJorgePressed = false;
+		isMariaPressed = false;
+		isDaniPressed = false;
+		isAdriPressed = false;
+		isRichiPressed = false;
+		isVicthorPressed = false;
+		isSandiaPressed = false;
+		isCarlosPressed = false;
+		isAlanPressed = false;
+		animPrev = animAlan;
     }
-
-	private void UpdateStatus(){
-		if (selected == "Morales"){
-			animMorales.SetBool("isPressed", true);
-			animJorge.SetBool("isPressed", false);
-		}
-		else if (selected == "Jorge"){
-			animMorales.SetBool("isPressed", false);
-			animJorge.SetBool("isPressed", true);
-		}
-	}
 	
 	public void ClickMorales(){
-		if (isMoralesPressed){
-			animMorales.SetBool("isPressed", false);
-			isMoralesPressed = false;
-			GameValues.leader = 0;
-		}
-		else {
-			selected = "Morales";
-			UpdateStatus();
-			isMoralesPressed = true;
-			isJorgePressed = false;
-			GameValues.leader = 1;
-		}
+		isMoralesPressed = Click(isMoralesPressed, animMorales, 1);
 	}
 
 	public void ClickJorge(){
-		if (isJorgePressed){
-			animJorge.SetBool("isPressed", false);
-			isJorgePressed = false;
+		isJorgePressed = Click(isJorgePressed, animJorge, 2);
+	}
+
+	public void ClickMaria(){
+		isMariaPressed = Click(isMariaPressed, animMaria, 3);
+	}
+
+	public void ClickDani(){
+		isDaniPressed = Click(isDaniPressed, animDani, 4);
+	}
+
+	public void ClickAdri(){
+		isAdriPressed = Click(isAdriPressed, animAdri, 5);
+	}
+
+	public void ClickRichi(){
+		isRichiPressed = Click(isRichiPressed, animRichi, 6);
+	}
+
+	public void ClickVicthor(){
+		isVicthorPressed = Click(isVicthorPressed, animVicthor, 7);
+	}
+
+	public void ClickSandia(){
+		isSandiaPressed = Click(isSandiaPressed, animSandia, 8);
+	}
+
+	public void ClickCarlos(){
+		isCarlosPressed = Click(isCarlosPressed, animCarlos, 9);
+	}
+
+	public void ClickAlan(){
+		isAlanPressed = Click(isAlanPressed, animAlan, 10);
+	}
+
+	private bool Click(bool isPressed, Animator anim, int value){
+		if (isPressed){
+			anim.SetBool("isPressed", false);
 			GameValues.leader = 0;
+			return false;
 		}
 		else {
-			selected = "Jorge";
-			UpdateStatus();
-			isJorgePressed = true;
-			isMoralesPressed = false;
-			GameValues.leader = 2;
+			GameValues.leader = value;
+			animPrev.SetBool("isPressed", false);
+			anim.SetBool("isPressed", true);
+			animPrev = anim;
+			return true;
 		}
 	}
 }
