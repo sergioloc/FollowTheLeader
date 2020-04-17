@@ -24,13 +24,13 @@ public class PaxController : MonoBehaviour
         isJumping = false;
         rb2d = GetComponent<Rigidbody2D>();
 		SetDifficulty();
-        if (initialGroup)
-            StartCoroutine(StartRunning());
-
     }
 
-    void Update()
+    void FixedUpdate()
     {
+        if (initialGroup && !GameValues.paxWaiting)
+            StartCoroutine(StartRunning());
+
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
 
         if (Input.GetKeyDown(KeyCode.Space) && !standBy)
