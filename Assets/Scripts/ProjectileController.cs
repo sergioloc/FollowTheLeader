@@ -13,7 +13,7 @@ public class ProjectileController : MonoBehaviour
 		Destroy(gameObject, 5f);
     }
 
-    void Update()
+    void FixedUpdate()
     {
 		rb2d.transform.Translate(Vector2.right * speed * Time.deltaTime);
     }

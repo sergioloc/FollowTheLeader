@@ -29,9 +29,7 @@ public class LeaderController : MonoBehaviour
         SetAmmo();
     }
 
-    
-
-    void Update()
+    void FixedUpdate()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
         

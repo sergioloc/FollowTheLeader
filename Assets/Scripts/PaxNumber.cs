@@ -8,10 +8,12 @@ public class PaxNumber : MonoBehaviour
     public GameObject leader, pax, gameOver;
     private Text paxText;
     public Text description;
+    
     void Start(){
         paxText = GetComponent<Text>();
     }
-    void Update()
+
+    void FixedUpdate()
     {
         if (GameValues.numPax < 1){
             paxText.text = "PAX: 0";

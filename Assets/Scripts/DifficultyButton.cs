@@ -16,11 +16,6 @@ public class DifficultyButton : MonoBehaviour
         isAlumnusPressed = false;
     }
 
-    void Update()
-    {
-        
-    }
-
     private void UpdateStatus(){
 		if (selected == "Observer"){
 			animObserver.SetBool("isPressed", true);

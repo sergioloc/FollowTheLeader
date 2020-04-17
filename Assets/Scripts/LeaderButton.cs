@@ -14,11 +14,6 @@ public class LeaderButton : MonoBehaviour
 		isJorgePressed = false;
     }
 
-    void Update()
-    {
-
-    }
-
 	private void UpdateStatus(){
 		if (selected == "Morales"){
 			animMorales.SetBool("isPressed", true);

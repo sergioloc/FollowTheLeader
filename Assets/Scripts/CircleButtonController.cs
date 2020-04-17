@@ -13,10 +13,4 @@ public class CircleButtonController : MonoBehaviour
             anim.SetBool("Stop", true);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
