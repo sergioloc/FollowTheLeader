@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LeaderButton : MonoBehaviour
 {
-	public Animator animMorales, animJorge, animMaria, animDani, animAdri, animRichi, animVicthor, animSandia, animCarlos, animAlan;
-	private bool isMoralesPressed, isJorgePressed, isMariaPressed, isDaniPressed, isAdriPressed, isRichiPressed, isVicthorPressed, isSandiaPressed, isCarlosPressed, isAlanPressed;
+	public Animator animMorales, animJorge, animMaria, animDani, animAdri, animRichi, animVicthor, animSandia, animCarlos, animAlan, animSergio;
+	private bool isMoralesPressed, isJorgePressed, isMariaPressed, isDaniPressed, isAdriPressed, isRichiPressed, isVicthorPressed, isSandiaPressed, isCarlosPressed, isAlanPressed, isSergioPressed;
 	private Animator animPrev;
+
+	public Text textSergio;
 	
     void Start()
     {
@@ -20,7 +23,14 @@ public class LeaderButton : MonoBehaviour
 		isSandiaPressed = false;
 		isCarlosPressed = false;
 		isAlanPressed = false;
+		isSergioPressed = false;
 		animPrev = animAlan;
+		if (PlayerPrefs.GetInt("SergioLock") == 0)
+			animSergio.SetBool("isLock", true);
+		else{
+			animSergio.SetBool("isLock", false);
+			textSergio.text = "Sergio";
+		}	
     }
 	
 	public void ClickMorales(){
@@ -63,6 +73,11 @@ public class LeaderButton : MonoBehaviour
 		isAlanPressed = Click(isAlanPressed, animAlan, 10);
 	}
 
+	public void ClickSergio(){
+		if (PlayerPrefs.GetInt("SergioLock") == 1)
+			isSergioPressed = Click(isSergioPressed, animSergio, 11);
+	}
+
 	private bool Click(bool isPressed, Animator anim, int value){
 		if (isPressed){
 			anim.SetBool("isPressed", false);
@@ -71,8 +86,8 @@ public class LeaderButton : MonoBehaviour
 		}
 		else {
 			GameValues.leader = value;
-			animPrev.SetBool("isPressed", false);
 			anim.SetBool("isPressed", true);
+			animPrev.SetBool("isPressed", false);
 			animPrev = anim;
 			return true;
 		}
