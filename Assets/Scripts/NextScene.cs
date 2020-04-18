@@ -14,6 +14,8 @@ public class NextScene : MonoBehaviour
     }
 	
 	public void GoWithAnimation(){
+        GameValues.skipRules = false;
+        GameValues.paxWaiting = true;
 		anim.SetTrigger("Click");
 		StartCoroutine(GoToScene());
 	}
@@ -21,6 +23,12 @@ public class NextScene : MonoBehaviour
     public void GoWithoutAnimation(){
         SceneManager.LoadScene(next);
     }
+
+    public void RestartWithAnimation(){
+        GameValues.skipRules = true;
+		anim.SetTrigger("Click");
+		StartCoroutine(GoToScene());
+	}
 	
 	IEnumerator GoToScene()
     {

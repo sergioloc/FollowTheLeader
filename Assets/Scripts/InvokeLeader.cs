@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InvokeLeader : MonoBehaviour
 {
-	public GameObject morales, jorge;
+	public GameObject morales, jorge, dani;
 	
     void Start()
     {
@@ -13,6 +13,9 @@ public class InvokeLeader : MonoBehaviour
 		}
 		else if (GameValues.leader == 2){
 			jorge.SetActive(true);
+		}
+		else if (GameValues.leader == 4){
+			dani.SetActive(true);
 		}
     }
 }

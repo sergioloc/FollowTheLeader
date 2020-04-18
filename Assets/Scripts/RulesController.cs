@@ -7,6 +7,12 @@ public class RulesController : MonoBehaviour
     public GameObject page1, page2, back, ui;
     private string actualPage = "Page1";
 
+    void Start(){
+        if (GameValues.skipRules){
+            StartLevel();
+        }
+    }
+
     public void NextPage(){
         Debug.Log(actualPage);
         if (actualPage == "Page1"){
@@ -16,9 +22,7 @@ public class RulesController : MonoBehaviour
             actualPage = "Page2";
         }
         else if (actualPage == "Page2"){
-            GameValues.paxWaiting = false;
-            ui.SetActive(true);
-            gameObject.SetActive(false);
+            StartLevel();
         }
     }
 
@@ -30,6 +34,12 @@ public class RulesController : MonoBehaviour
             back.SetActive(false);
             actualPage = "Page1";
         }
+    }
+
+    private void StartLevel(){
+        GameValues.paxWaiting = false;
+        ui.SetActive(true);
+        gameObject.SetActive(false);
     }
 
 }

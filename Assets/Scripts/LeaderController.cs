@@ -18,7 +18,7 @@ public class LeaderController : MonoBehaviour
     public LayerMask whatIsGround;
     private bool isGrounded;
 
-    public GameObject ammo1, ammo2, ammo3, ammo4, gameOver;
+    public GameObject ammo1, ammo2, ammo3, ammo4, gameOver, paxes;
     public Text description;
     public int currentAmmo = 0;
 	
@@ -191,5 +191,6 @@ public class LeaderController : MonoBehaviour
         description.text = "Your leader died!";
         gameOver.SetActive(true);
         Destroy(gameObject);
+        Destroy(paxes);
     }
 }
