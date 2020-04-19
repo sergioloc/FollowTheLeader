@@ -17,8 +17,7 @@ public class ForeignController : MonoBehaviour
         if (collision.gameObject.tag == "Horde")
         {
 			int type = Random.Range(1, 3); //fast, normal, slow
-			Debug.Log(type);
-            setValues(type);
+            SetValues(type);
 			if (!added){
 				GameValues.numPax++;
 				added = true;
@@ -26,7 +25,7 @@ public class ForeignController : MonoBehaviour
         }
 	}
 	
-	private void setValues(int type)
+	private void SetValues(int type)
 	{
 		float sec = 0;
 		

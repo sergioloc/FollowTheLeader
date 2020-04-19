@@ -43,6 +43,7 @@ public class PaxController : MonoBehaviour
 		}
 		if (!standBy){
 			rb2d.transform.Translate(Vector2.right * speed * Time.deltaTime);
+            anim.SetBool("isRunning", true);
 		}	
     }
 
@@ -117,7 +118,6 @@ public class PaxController : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 		standBy = false;
-        anim.SetBool("isRunning", true);
 	}
 
     IEnumerator NotJumping()

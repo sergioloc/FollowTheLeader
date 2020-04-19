@@ -16,9 +16,10 @@ public class PaxNumber : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (GameValues.numPax < 1 && !leader.activeSelf){
+        if (GameValues.numPax < 1){
             paxText.text = "PAX: 0";
-            Die();
+            if (leader.activeSelf)
+                Die();
         }
         else {
             paxText.text = "PAX: " + GameValues.numPax.ToString();
@@ -32,7 +33,7 @@ public class PaxNumber : MonoBehaviour
     }
 
     IEnumerator GameOver(){
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         description.text = "All your PAXes died!";
         gameOver.SetActive(true);
     }

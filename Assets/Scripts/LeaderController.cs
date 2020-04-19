@@ -23,9 +23,11 @@ public class LeaderController : MonoBehaviour
     public int currentAmmo = 0;
     private Animator animator;
     public GameObject morales, jorge, lujan, dani, adri, richi, victhor, sandia, carlos, alan, sergio;
+    private bool isAlive;
 	
     void Start()
     {
+        isAlive = true;
         rb2d = GetComponent<Rigidbody2D>();
         InvokeLeader();
         SetDifficulty();
@@ -37,7 +39,8 @@ public class LeaderController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
         animator.SetBool("isGrounded", isGrounded);
         
-        rb2d.transform.Translate(Vector2.right * speed * Time.deltaTime);
+        if (isAlive)
+            rb2d.transform.Translate(Vector2.right * speed * Time.deltaTime);
 		
 		if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -104,7 +107,7 @@ public class LeaderController : MonoBehaviour
     }
 
     public void Jump(){
-        if(isGrounded){
+        if(isGrounded && isAlive){
             rb2d.AddForce(Vector2.up * jumpForce * 100);
             rb2d.AddForce(Vector2.right * push);
         }
@@ -172,7 +175,7 @@ public class LeaderController : MonoBehaviour
     }
 
     public void Attack(){
-        if (currentAmmo > 0){
+        if (currentAmmo > 0 && isAlive){
             animator.SetTrigger("Attack");
             Instantiate(projectile, shotPoint.position, shotPoint.rotation);
             if (currentAmmo == 1)
@@ -196,10 +199,11 @@ public class LeaderController : MonoBehaviour
     }
 
     private void Die(){
-        StartCoroutine(GameOver());
+        isAlive = false;
         die.SetActive(true);
         characters.SetActive(false);
         paxes.SetActive(false);
+        StartCoroutine(GameOver());
     }
 
     IEnumerator GameOver(){

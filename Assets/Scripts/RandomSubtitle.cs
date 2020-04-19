@@ -7,20 +7,33 @@ public class RandomSubtitle : MonoBehaviour
 {
     private Text subtitle;
     private int rand;
+    string[] sentences;
 
     void Start()
     {
         subtitle = GetComponent<Text>();
+        sentences = new string[] {
+            "The roof is on fire!", 
+            "Mmmmmmmadrid", 
+            "Chami's Ranchero",
+            "I'm a little strawberry. Eat me!",
+            "Do de roar!",
+            "Team Mocket takes off again...",
+            "Centurion!",
+            "Paella Toros, Olé Olé",
+            "Once BESTie, always BESTie",
+            "Mongolians!",
+            "If your LBG is suspended clap your hands",
+            "Beware of Carlinhos",
+            "La lisiadaaaaaa",
+            "Every where we gooo",
+            "Afterparty"
+
+        };
         GenerateText();
     }
 
     public void GenerateText(){
-        rand = Random.Range(1, 3);
-        if (rand == 1){
-            subtitle.text = "the roof is on fire!";
-        }
-        else {
-            subtitle.text = "Mmmmmmadrid";
-        }
+        subtitle.text = sentences[Random.Range(0, sentences.Length)];
     }
 }
