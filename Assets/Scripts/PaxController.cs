@@ -16,6 +16,7 @@ public class PaxController : MonoBehaviour
     public LayerMask whatIsGround;
     private bool isGrounded;
     private bool isJumping;
+    private Animator anim;
 	
 	private Rigidbody2D rb2d;
 
@@ -23,6 +24,7 @@ public class PaxController : MonoBehaviour
     {
         isJumping = false;
         rb2d = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 		SetDifficulty();
     }
 
@@ -107,6 +109,7 @@ public class PaxController : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 		standBy = false;
+        anim.SetBool("isRunning", true);
 	}
 
     IEnumerator NotJumping()
