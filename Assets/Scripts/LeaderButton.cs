@@ -5,14 +5,16 @@ using UnityEngine.UI;
 
 public class LeaderButton : MonoBehaviour
 {
-	public Animator animMorales, animJorge, animMaria, animDani, animAdri, animRichi, animVicthor, animSandia, animCarlos, animAlan, animSergio;
-	private bool isMoralesPressed, isJorgePressed, isMariaPressed, isDaniPressed, isAdriPressed, isRichiPressed, isVicthorPressed, isSandiaPressed, isCarlosPressed, isAlanPressed, isSergioPressed;
+	public Animator animMorales, animJorge, animMaria, animDani, animAdri, animRichi, animVicthor, animSandia, animCarlos, animAlan, animSergio, animLucia;
+	private bool isMoralesPressed, isJorgePressed, isMariaPressed, isDaniPressed, isAdriPressed, isRichiPressed, isVicthorPressed, isSandiaPressed, isCarlosPressed, isAlanPressed, isSergioPressed, isLuciaPressed;
 	private Animator animPrev;
 
-	public Text textSergio;
+	public Text textSergio, textLucia;
 	
     void Start()
     {
+		PlayerPrefs.SetInt("SergioLock", 0);
+		PlayerPrefs.SetInt("LuciaLock", 0);
 		isMoralesPressed = false;
 		isJorgePressed = false;
 		isMariaPressed = false;
@@ -24,12 +26,17 @@ public class LeaderButton : MonoBehaviour
 		isCarlosPressed = false;
 		isAlanPressed = false;
 		isSergioPressed = false;
-		animPrev = animAlan;
 		if (PlayerPrefs.GetInt("SergioLock") == 0)
 			animSergio.SetBool("isLock", true);
 		else{
 			animSergio.SetBool("isLock", false);
 			textSergio.text = "Sergio";
+		}
+		if (PlayerPrefs.GetInt("LuciaLock") == 0)
+			animLucia.SetBool("isLock", true);
+		else{
+			animLucia.SetBool("isLock", false);
+			textLucia.text = "Lucia";
 		}	
     }
 	
@@ -87,7 +94,8 @@ public class LeaderButton : MonoBehaviour
 		else {
 			GameValues.leader = value;
 			anim.SetBool("isPressed", true);
-			animPrev.SetBool("isPressed", false);
+			if (animPrev != null)
+				animPrev.SetBool("isPressed", false);
 			animPrev = anim;
 			return true;
 		}
