@@ -10,4 +10,5 @@ public class GameValues : MonoBehaviour
 	static public int initialNumPax = 9;
 	static public bool paxWaiting = true;
 	static public bool skipRules = false;
+	static public Animator animator;
 }

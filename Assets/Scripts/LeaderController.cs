@@ -21,10 +21,13 @@ public class LeaderController : MonoBehaviour
     public GameObject ammo1, ammo2, ammo3, ammo4, gameOver, paxes;
     public Text description;
     public int currentAmmo = 0;
+    private Animator animator;
+    public GameObject morales, jorge, lujan, dani, adri, richi, victhor, sandia, carlos, alan, sergio;
 	
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        InvokeLeader();
         SetDifficulty();
         SetAmmo();
     }
@@ -32,6 +35,7 @@ public class LeaderController : MonoBehaviour
     void FixedUpdate()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+        animator.SetBool("isGrounded", isGrounded);
         
         rb2d.transform.Translate(Vector2.right * speed * Time.deltaTime);
 		
@@ -169,6 +173,7 @@ public class LeaderController : MonoBehaviour
 
     public void Attack(){
         if (currentAmmo > 0){
+            animator.SetTrigger("Attack");
             Instantiate(projectile, shotPoint.position, shotPoint.rotation);
             if (currentAmmo == 1)
             {
@@ -201,5 +206,53 @@ public class LeaderController : MonoBehaviour
         yield return new WaitForSeconds(2f);
         gameOver.SetActive(true);
         description.text = "Your leader died!";
+    }
+
+    private void InvokeLeader(){
+        animator = morales.GetComponent<Animator>();
+       if (GameValues.leader == 1){
+			morales.SetActive(true);
+			animator = morales.GetComponent<Animator>();
+		}
+		else if (GameValues.leader == 2){
+			jorge.SetActive(true);
+			animator = jorge.GetComponent<Animator>();
+		}
+		else if (GameValues.leader == 3){
+			lujan.SetActive(true);
+			animator = lujan.GetComponent<Animator>();
+		}
+		else if (GameValues.leader == 4){
+			dani.SetActive(true);
+			animator = dani.GetComponent<Animator>();
+		}
+		else if (GameValues.leader == 5){
+			adri.SetActive(true);
+			animator = adri.GetComponent<Animator>();
+		}
+		else if (GameValues.leader == 6){
+			richi.SetActive(true);
+			animator = richi.GetComponent<Animator>();
+		}
+		else if (GameValues.leader == 7){
+			victhor.SetActive(true);
+			animator = victhor.GetComponent<Animator>();
+		}
+		else if (GameValues.leader == 8){
+			sandia.SetActive(true);
+			animator = sandia.GetComponent<Animator>();
+		}
+		else if (GameValues.leader == 9){
+			carlos.SetActive(true);
+		    animator = carlos.GetComponent<Animator>();
+		}
+		else if (GameValues.leader == 10){
+			alan.SetActive(true);
+			animator = alan.GetComponent<Animator>();
+		}
+		else if (GameValues.leader == 11){
+			sergio.SetActive(true);
+			animator = sergio.GetComponent<Animator>();
+		}
     }
 }
