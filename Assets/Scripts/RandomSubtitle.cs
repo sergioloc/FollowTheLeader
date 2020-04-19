@@ -27,7 +27,9 @@ public class RandomSubtitle : MonoBehaviour
             "Beware of Carlinhos",
             "La lisiadaaaaaa",
             "Every where we gooo",
-            "Afterparty"
+            "Afterparty",
+            "Madre mmmmmia",
+            "Viva la patrona!"
 
         };
         GenerateText();
