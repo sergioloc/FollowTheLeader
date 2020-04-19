@@ -11,6 +11,8 @@ public class PaxController : MonoBehaviour
 	public bool standBy = true;
     public bool initialGroup = true;
 
+    public GameObject dieParticle;
+
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask whatIsGround;
@@ -43,18 +45,19 @@ public class PaxController : MonoBehaviour
 			rb2d.transform.Translate(Vector2.right * speed * Time.deltaTime);
 		}	
     }
+
+    void OnCollisionEnter2D(Collision2D collision){
+        if (collision.gameObject.tag == "Shadow")
+        {
+            Die();
+        }
+    }
 	
 	void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "ShadowAttack")
+        if (collision.gameObject.tag == "DeadZone")
         {
-            GameValues.numPax--;
-			Destroy(gameObject);
-        }
-        else if (collision.gameObject.tag == "DeadZone")
-        {
-            GameValues.numPax--;
-           Destroy(gameObject);
+            Die();
         }
         else if (collision.gameObject.tag == "Win")
         {
@@ -66,8 +69,7 @@ public class PaxController : MonoBehaviour
     {
         if (collision.gameObject.tag == "SafeZone")
         {
-            GameValues.numPax--;
-			Destroy(gameObject);
+            Die();
         }
     }
 
@@ -96,6 +98,12 @@ public class PaxController : MonoBehaviour
             isJumping = true;
             StartCoroutine(NotJumping());
         }  
+    }
+
+    private void Die(){
+        dieParticle.SetActive(true);
+        GameValues.numPax--;
+		Destroy(gameObject);
     }
 
 	IEnumerator WaitForJump()

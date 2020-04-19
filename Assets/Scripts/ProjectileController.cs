@@ -22,7 +22,6 @@ public class ProjectileController : MonoBehaviour
     {
         if (col.gameObject.tag == "Shadow")
         {
-            Destroy(col.gameObject);
 			Destroy(gameObject);
         }
     }

@@ -18,17 +18,22 @@ public class PaxNumber : MonoBehaviour
     {
         if (GameValues.numPax < 1 && !leader.activeSelf){
             paxText.text = "PAX: 0";
-            GameOver();
+            Die();
         }
         else {
             paxText.text = "PAX: " + GameValues.numPax.ToString();
         }
     }
+    
+    private void Die(){
+        StartCoroutine(GameOver());
+        leader.SetActive(false);
+        pax.SetActive(false);
+    }
 
-    private void GameOver(){
+    IEnumerator GameOver(){
+        yield return new WaitForSeconds(2f);
         description.text = "All your PAXes died!";
-        Destroy(leader);
-        Destroy(pax);
         gameOver.SetActive(true);
     }
 }

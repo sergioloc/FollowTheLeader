@@ -1,28 +1,31 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ShadowController : MonoBehaviour
 {
     private Animator anim;
+    private float distance;
+    public GameObject player, dieParticle;
     void Start()
     {
         anim = GetComponent<Animator>();
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Horde"))
-        {
+    void FixedUpdate(){
+        distance = player.transform.position.x - transform.position.x;
+        if (Mathf.Abs(distance) < 10){
             anim.SetBool("isAttacking", true);
         }
-	}
+    }
 
-     void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && collision.gameObject.CompareTag("Horde"))
+        if (collision.gameObject.CompareTag("WaterBall"))
         {
-            anim.SetBool("isAttacking", false);
+            dieParticle.SetActive(true);
+            Destroy(gameObject);
         }
 	}
 }

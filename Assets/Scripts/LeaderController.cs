@@ -8,7 +8,7 @@ public class LeaderController : MonoBehaviour
     
 	public int jumpForce = 0;
 	public int speed = 10;	
-	public GameObject projectile, fireworks;
+	public GameObject projectile, die, characters;
 	public Transform shotPoint;
 	private Rigidbody2D rb2d;
     private float push = 200f;
@@ -106,13 +106,17 @@ public class LeaderController : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D collision){
+        if (collision.gameObject.tag == "Shadow")
+        {
+            Die();
+        }
+    }
+
 	void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "ShadowAttack")
-        {
-            GameOver();
-        }
-        else if (collision.gameObject.tag == "Potion")
+        
+        if (collision.gameObject.tag == "Water")
         {
             if (AddAmmo())
             {
@@ -122,12 +126,11 @@ public class LeaderController : MonoBehaviour
         }
         else if (collision.gameObject.tag == "DeadZone")
         {
-           GameOver();
+           Die();
         }
         else if (collision.gameObject.tag == "Win")
         {
-            fireworks.SetActive(true);
-           speed = 0;
+            speed = 0;
         }
     }
 	
@@ -135,7 +138,7 @@ public class LeaderController : MonoBehaviour
     {
         if (collision.gameObject.tag == "SafeZone")
         {
-			GameOver();
+			Die();
         }
     }
 
@@ -187,10 +190,16 @@ public class LeaderController : MonoBehaviour
         }
     }
 
-    private void GameOver(){
-        description.text = "Your leader died!";
+    private void Die(){
+        StartCoroutine(GameOver());
+        die.SetActive(true);
+        characters.SetActive(false);
+        paxes.SetActive(false);
+    }
+
+    IEnumerator GameOver(){
+        yield return new WaitForSeconds(2f);
         gameOver.SetActive(true);
-        Destroy(gameObject);
-        Destroy(paxes);
+        description.text = "Your leader died!";
     }
 }

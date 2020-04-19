@@ -8,10 +8,13 @@ TagManager:
   - SafeZone
   - Horde
   - DeadZone
-  - Potion
   - Shadow
   - ShadowAttack
   - Win
+  - Water
+  - Potion
+  - Cat
+  - WaterBall
   layers:
   - Default
   - TransparentFX

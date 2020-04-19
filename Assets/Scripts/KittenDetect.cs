@@ -10,6 +10,7 @@ public class KittenDetect : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            gameObject.SetActive(false);
             shadow.SetActive(true);
             Destroy(gameObject);
         }
