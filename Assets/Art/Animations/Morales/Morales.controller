@@ -149,12 +149,6 @@ AnimatorController:
   m_Name: Morales
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: isRunning
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
   - m_Name: isGrounded
     m_Type: 4
     m_DefaultFloat: 0
@@ -222,7 +216,7 @@ AnimatorStateMachine:
     m_Position: {x: 350, y: 30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -755798901204014895}
-    m_Position: {x: 620, y: 70, z: 0}
+    m_Position: {x: 630, y: 120, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
