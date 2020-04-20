@@ -29,7 +29,7 @@ public class LeaderController : MonoBehaviour
     {
         isAlive = true;
         rb2d = GetComponent<Rigidbody2D>();
-        InvokeLeader();
+        //InvokeLeader();
         SetDifficulty();
         SetAmmo();
     }
@@ -212,8 +212,7 @@ public class LeaderController : MonoBehaviour
         description.text = "Your leader died!";
     }
 
-    private void InvokeLeader(){
-        animator = morales.GetComponent<Animator>();
+    void Awake(){
        if (GameValues.leader == 1){
 			morales.SetActive(true);
 			animator = morales.GetComponent<Animator>();
@@ -258,5 +257,9 @@ public class LeaderController : MonoBehaviour
 			sergio.SetActive(true);
 			animator = sergio.GetComponent<Animator>();
 		}
+        else{
+            morales.SetActive(true);
+			animator = morales.GetComponent<Animator>();
+        }
     }
 }
