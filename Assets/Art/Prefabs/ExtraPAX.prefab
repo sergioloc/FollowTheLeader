@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1827433241336739193}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Run
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,10 +48,9 @@ GameObject:
   - component: {fileID: 3397882063189195968}
   - component: {fileID: 7808127272481608807}
   - component: {fileID: 625863674071226987}
-  - component: {fileID: 99780911967195077}
   - component: {fileID: 2730325848557954567}
   - component: {fileID: 7445875235809781263}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: ExtraPAX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +90,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -120,18 +119,6 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
---- !u!114 &99780911967195077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518888911175112766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab940f8c31cd03e44a3c4b64d1f614e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &2730325848557954567
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -187,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4196874603151255471}
   - component: {fileID: 3003451464095989926}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Run_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 620058597007684986}
   - component: {fileID: 7846325051629726267}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Idle_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2540670413288124472}
   - component: {fileID: 8209051139319110065}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Idle_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3455700596052402681}
   - component: {fileID: 3347639385257297858}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Run_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5845017015045671301}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,7 +529,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3309780228582960341}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
@@ -573,7 +560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 888847981747161161}
   - component: {fileID: 926352717068047046}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Run_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -654,7 +641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6711188812050658441}
   - component: {fileID: 725731198561939888}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Run_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -735,7 +722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3446091245143443542}
   - component: {fileID: 2017142914267091412}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Run_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -816,7 +803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6575937315589793932}
   - component: {fileID: 9126200681669642351}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Run_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -898,7 +885,7 @@ GameObject:
   - component: {fileID: 3990525115586693518}
   - component: {fileID: 3388305412558405130}
   - component: {fileID: 2614338011855965741}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: DieParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5651,7 +5638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9092752878796523184}
   - component: {fileID: 5040041636736317177}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Run_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

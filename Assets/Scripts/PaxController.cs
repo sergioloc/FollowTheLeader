@@ -21,6 +21,8 @@ public class PaxController : MonoBehaviour
     private Animator anim;
 	
 	private Rigidbody2D rb2d;
+    private bool added = false;
+
 
     void Start()
     {
@@ -33,12 +35,12 @@ public class PaxController : MonoBehaviour
     void FixedUpdate()
     {
         if (initialGroup && !GameValues.paxWaiting)
-            StartCoroutine(StartRunning());
+            StartCoroutine(Run(2f));
             
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
         anim.SetBool("isGrounded", isGrounded);
 
-        if (Input.GetKeyDown(KeyCode.Space) && !standBy)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
 			Jump();
 		}
@@ -64,6 +66,10 @@ public class PaxController : MonoBehaviour
         else if (collision.gameObject.tag == "Win")
         {
            standBy = true;
+        }
+        else if (collision.gameObject.tag == "Horde")
+        {
+			DelayRunning();
         }
     }
 	
@@ -95,12 +101,45 @@ public class PaxController : MonoBehaviour
     }
 	
     public void Jump(){
-        if (isGrounded && !isJumping){
+        if (isGrounded && !standBy){
             StartCoroutine(WaitForJump());
             isJumping = true;
-            StartCoroutine(NotJumping());
         }  
     }
+
+    private void DelayRunning(){
+        int type = Random.Range(1, 3); //fast, normal, slow
+            SetValues(type);
+			if (!added){
+				GameValues.numPax++;
+				added = true;
+			}
+    }
+
+    private void SetValues(int type)
+	{
+		float sec = 0;
+		
+		if (type == 1){ //fast
+			delay = 1;
+			sec = Random.Range(0, 0.1f);
+		}
+		else if (type == 2){ //normal
+			delay = 2;
+			sec = Random.Range(0.15f, 0.35f);
+		}
+		else { //slow
+			delay = 3;
+			sec = Random.Range(0.4f, 0.6f);
+		}
+		StartCoroutine(Run(sec));
+	}
+
+    IEnumerator Run(float sec)
+    {
+        yield return new WaitForSeconds(sec);
+		standBy = false;
+	}
 
     private void Die(){
         dieParticle.SetActive(true);
@@ -113,12 +152,6 @@ public class PaxController : MonoBehaviour
         yield return new WaitForSeconds(delay * 0.1f);
 		rb2d.AddForce(Vector2.up * jumpForce * 100);
         rb2d.AddForce(Vector2.right * 200f);
-	}
-
-    IEnumerator StartRunning()
-    {
-        yield return new WaitForSeconds(2f);
-		standBy = false;
 	}
 
     IEnumerator NotJumping()
