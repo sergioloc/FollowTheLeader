@@ -17,7 +17,6 @@ public class PaxController : MonoBehaviour
     public float checkRadius;
     public LayerMask whatIsGround;
     private bool isGrounded;
-    private bool isJumping;
     private Animator anim;
 	
 	private Rigidbody2D rb2d;
@@ -26,7 +25,6 @@ public class PaxController : MonoBehaviour
 
     void Start()
     {
-        isJumping = false;
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 		SetDifficulty();
@@ -67,7 +65,7 @@ public class PaxController : MonoBehaviour
         {
            standBy = true;
         }
-        else if (collision.gameObject.tag == "Horde")
+        else if (collision.gameObject.tag == "Horde" && !initialGroup)
         {
 			DelayRunning();
         }
@@ -103,7 +101,6 @@ public class PaxController : MonoBehaviour
     public void Jump(){
         if (isGrounded && !standBy){
             StartCoroutine(WaitForJump());
-            isJumping = true;
         }  
     }
 
@@ -152,11 +149,5 @@ public class PaxController : MonoBehaviour
         yield return new WaitForSeconds(delay * 0.1f);
 		rb2d.AddForce(Vector2.up * jumpForce * 100);
         rb2d.AddForce(Vector2.right * 200f);
-	}
-
-    IEnumerator NotJumping()
-    {
-        yield return new WaitForSeconds(0.25f);
-		isJumping = false;
 	}
 }
