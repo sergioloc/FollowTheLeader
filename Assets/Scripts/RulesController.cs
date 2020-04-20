@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RulesController : MonoBehaviour
 {
-    public GameObject page1, page2, back, ui;
+    public GameObject page1, page2, back, ui, music;
     private string actualPage = "Page1";
 
     void Start(){
@@ -40,6 +40,8 @@ public class RulesController : MonoBehaviour
         GameValues.paxWaiting = false;
         ui.SetActive(true);
         gameObject.SetActive(false);
+        if(PlayerPrefs.GetInt("Mute") == 0)
+            music.SetActive(true);
     }
 
 }
