@@ -19,7 +19,7 @@ public class RandomSubtitle : MonoBehaviour
             "I'm a little strawberry. Eat me!",
             "Do de roar!",
             "Team Mocket takes off again...",
-            "Centurion!",
+            "3, 2, 1... Centurion!",
             "Paella Toros, Olé Olé",
             "Once BESTie, always BESTie",
             "Mongolians!",
@@ -29,7 +29,8 @@ public class RandomSubtitle : MonoBehaviour
             "Every where we gooo",
             "Afterparty",
             "Madre mmmmmia",
-            "Viva la patrona!"
+            "... Que viva La Patrona!",
+            "Prueba superada..."
 
         };
         GenerateText();

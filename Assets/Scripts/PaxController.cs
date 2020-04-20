@@ -34,8 +34,9 @@ public class PaxController : MonoBehaviour
     {
         if (initialGroup && !GameValues.paxWaiting)
             StartCoroutine(StartRunning());
-
+            
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+        anim.SetBool("isGrounded", isGrounded);
 
         if (Input.GetKeyDown(KeyCode.Space) && !standBy)
         {
