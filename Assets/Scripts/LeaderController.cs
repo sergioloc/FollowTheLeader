@@ -137,6 +137,7 @@ public class LeaderController : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Win")
         {
+            animator.SetBool("Idle", true);
             speed = 0;
         }
     }

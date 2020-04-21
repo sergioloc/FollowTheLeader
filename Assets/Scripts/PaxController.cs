@@ -44,7 +44,8 @@ public class PaxController : MonoBehaviour
         {
 			Jump();
 		}
-		if (!standBy){
+        
+		if (!standBy && !GameValues.paxWaiting){
 			rb2d.transform.Translate(Vector2.right * speed * Time.deltaTime);
             anim.SetBool("isRunning", true);
 		}	
@@ -62,7 +63,7 @@ public class PaxController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Win")
         {
-           Win();
+           StartCoroutine(Win());
         }
         else if (collision.gameObject.tag == "Horde" && !initialGroup)
         {
@@ -147,9 +148,9 @@ public class PaxController : MonoBehaviour
         }
     }
 
-    private void Win(){
-        Debug.Log("PAX Win");
-        standBy = true;
+    IEnumerator Win(){
+        yield return new WaitForSeconds(1.2f);
+        GameValues.paxWaiting = true;
         anim.SetBool("isRunning", false);
     }
 
