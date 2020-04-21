@@ -5,18 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class NextScene : MonoBehaviour
 {
-	public string next;
-	private Animator anim;
-	
-    void Start()
-    {
-        anim = GetComponent<Animator>();
-    }
+	public string next;	
 	
 	public void GoWithAnimation(){
         GameValues.skipRules = false;
         GameValues.paxWaiting = true;
-		anim.SetTrigger("Click");
+		GetComponent<Animator>().SetTrigger("Click");
 		StartCoroutine(GoToScene());
 	}
 
@@ -26,7 +20,7 @@ public class NextScene : MonoBehaviour
 
     public void RestartWithAnimation(){
         GameValues.skipRules = true;
-		anim.SetTrigger("Click");
+		GetComponent<Animator>().SetTrigger("Click");
 		StartCoroutine(GoToScene());
 	}
 	
