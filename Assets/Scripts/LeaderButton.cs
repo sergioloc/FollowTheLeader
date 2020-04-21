@@ -85,6 +85,11 @@ public class LeaderButton : MonoBehaviour
 			isSergioPressed = Click(isSergioPressed, animSergio, 11);
 	}
 
+	public void ClickLucia(){
+		if (PlayerPrefs.GetInt("LuciaLock") == 1)
+			isLuciaPressed = Click(isLuciaPressed, animLucia, 12);
+	}
+
 	private bool Click(bool isPressed, Animator anim, int value){
 		if (isPressed){
 			anim.SetBool("isPressed", false);
