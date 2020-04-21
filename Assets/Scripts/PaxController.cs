@@ -18,6 +18,7 @@ public class PaxController : MonoBehaviour
     public LayerMask whatIsGround;
     private bool isGrounded;
     private Animator anim;
+    private bool isAlive;
 	
 	private Rigidbody2D rb2d;
     private bool added = false;
@@ -25,6 +26,7 @@ public class PaxController : MonoBehaviour
 
     void Start()
     {
+        isAlive = true;
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 		SetDifficulty();
@@ -51,19 +53,17 @@ public class PaxController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.tag == "Shadow")
         {
+            Debug.Log("Shadow");
             Die();
         }
     }
 	
 	void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "DeadZone")
-        {
-            Die();
-        }
-        else if (collision.gameObject.tag == "Win")
+        if (collision.gameObject.tag == "Win")
         {
            standBy = true;
+           anim.SetBool("isRunning", false);
         }
         else if (collision.gameObject.tag == "Horde" && !initialGroup)
         {
@@ -75,6 +75,7 @@ public class PaxController : MonoBehaviour
     {
         if (collision.gameObject.tag == "SafeZone")
         {
+            Debug.Log("SafeZone");
             Die();
         }
     }
@@ -139,9 +140,12 @@ public class PaxController : MonoBehaviour
 	}
 
     private void Die(){
-        dieParticle.SetActive(true);
-        GameValues.numPax--;
-		Destroy(gameObject);
+        if (isAlive){
+            isAlive = false;
+            dieParticle.SetActive(true);
+            GameValues.numPax--;
+		    Destroy(gameObject);
+        }
     }
 
 	IEnumerator WaitForJump()
