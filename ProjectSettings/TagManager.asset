@@ -15,6 +15,7 @@ TagManager:
   - Potion
   - Cat
   - WaterBall
+  - DeadPAX
   layers:
   - Default
   - TransparentFX

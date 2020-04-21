@@ -65,20 +65,22 @@ public class PaxController : MonoBehaviour
         {
            StartCoroutine(Win());
         }
+        else if (collision.gameObject.tag == "DeadPAX" || collision.gameObject.tag == "DeadZone"){
+            Die();
+        }
         else if (collision.gameObject.tag == "Horde" && !initialGroup)
         {
 			DelayRunning();
         }
     }
-	
-	void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "SafeZone")
+
+    void OnTriggerExit2D(Collider2D collision){
+        if (collision.gameObject.tag == "Win")
         {
-            Debug.Log("SafeZone");
-            Die();
+           StartCoroutine(Win());
         }
     }
+
 
     private void SetDifficulty(){
         if (GameValues.difficulty == 1){ //observer
