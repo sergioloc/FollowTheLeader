@@ -62,8 +62,7 @@ public class PaxController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Win")
         {
-           standBy = true;
-           anim.SetBool("isRunning", false);
+           Win();
         }
         else if (collision.gameObject.tag == "Horde" && !initialGroup)
         {
@@ -146,6 +145,12 @@ public class PaxController : MonoBehaviour
             GameValues.numPax--;
 		    Destroy(gameObject);
         }
+    }
+
+    private void Win(){
+        Debug.Log("PAX Win");
+        standBy = true;
+        anim.SetBool("isRunning", false);
     }
 
 	IEnumerator WaitForJump()
