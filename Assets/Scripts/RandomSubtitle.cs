@@ -29,7 +29,7 @@ public class RandomSubtitle : MonoBehaviour
             "Every where we gooo",
             "Afterparty",
             "Madre mmmmmia",
-            "... Que viva La Patrona!",
+            "Viva La Patrona!",
             "Prueba superada..."
 
         };
