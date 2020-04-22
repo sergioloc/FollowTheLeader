@@ -29,7 +29,9 @@ public class PaxController : MonoBehaviour
         isAlive = true;
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-		SetDifficulty();
+		speed = GameValues.speed;
+        jumpForce = GameValues.jumpForce;
+        rb2d.gravityScale = GameValues.gravity;
     }
 
     void FixedUpdate()
@@ -78,26 +80,6 @@ public class PaxController : MonoBehaviour
         if (collision.gameObject.tag == "Win")
         {
            StartCoroutine(Win());
-        }
-    }
-
-
-    private void SetDifficulty(){
-        if (GameValues.difficulty == 1){ //observer
-            speed = 10;
-        }
-        else if (GameValues.difficulty == 2){ //baby
-            speed = 15;
-            rb2d.gravityScale = 6;
-        }
-        else if (GameValues.difficulty == 3){ //full
-            speed = 18;
-            rb2d.gravityScale = 6;
-        }
-        else if (GameValues.difficulty == 4){ //alumni
-            speed = 22;
-            jumpForce = 18;
-            rb2d.gravityScale = 7;
         }
     }
 	

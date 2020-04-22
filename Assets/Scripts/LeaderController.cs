@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.RemoteConfig;
 
 public class LeaderController : MonoBehaviour
 {
     
-	public int jumpForce = 0;
-	public int speed = 10;	
-	public GameObject projectile, die, characters;
+	private int jumpForce;
+	private int speed;	
+	public GameObject projectile, projectileYellow, die, characters;
 	public Transform shotPoint;
 	private Rigidbody2D rb2d;
     private float push = 200f;
@@ -22,15 +23,17 @@ public class LeaderController : MonoBehaviour
     public Text description;
     public int currentAmmo = 0;
     private Animator animator;
-    public GameObject morales, jorge, lujan, dani, adri, richi, victhor, sandia, carlos, alan, sergio;
+    public GameObject morales, jorge, lujan, dani, adri, richi, victhor, sandia, carlos, alan, sergio, waterParticle;
     private bool isAlive;
 	
     void Start()
     {
         isAlive = true;
         rb2d = GetComponent<Rigidbody2D>();
-        //InvokeLeader();
-        SetDifficulty();
+        speed = GameValues.speed;
+        jumpForce = GameValues.jumpForce;
+        rb2d.gravityScale = GameValues.gravity;
+        SetLeader();
         SetAmmo();
     }
 
@@ -52,25 +55,6 @@ public class LeaderController : MonoBehaviour
 			Attack();
 		}
 		
-    }
-
-    private void SetDifficulty(){
-        if (GameValues.difficulty == 1){ //observer
-            speed = 10;
-        }
-        else if (GameValues.difficulty == 2){ //baby
-            speed = 15;
-            rb2d.gravityScale = 6;
-        }
-        else if (GameValues.difficulty == 3){ //full
-            speed = 18;
-            rb2d.gravityScale = 6;
-        }
-        else if (GameValues.difficulty == 4){ //alumni
-            speed = 22;
-            jumpForce = 18;
-            rb2d.gravityScale = 7;
-        }
     }
 
     private void SetAmmo(){
@@ -127,6 +111,7 @@ public class LeaderController : MonoBehaviour
         {
             if (AddAmmo())
             {
+                Instantiate(waterParticle, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
                 Destroy(collision.gameObject);
                 currentAmmo++;
             }
@@ -178,7 +163,10 @@ public class LeaderController : MonoBehaviour
     public void Attack(){
         if (currentAmmo > 0 && isAlive){
             animator.SetTrigger("Attack");
-            Instantiate(projectile, shotPoint.position, shotPoint.rotation);
+            if (GameValues.leader == 11)
+                Instantiate(projectileYellow, shotPoint.position, shotPoint.rotation);
+            else
+                Instantiate(projectile, shotPoint.position, shotPoint.rotation);
             if (currentAmmo == 1)
             {
                 ammo1.SetActive(false);
@@ -213,8 +201,8 @@ public class LeaderController : MonoBehaviour
         description.text = "Your leader died!";
     }
 
-    void Awake(){
-       if (GameValues.leader == 1){
+    private void SetLeader(){
+        if (GameValues.leader == 1){
 			morales.SetActive(true);
 			animator = morales.GetComponent<Animator>();
 		}

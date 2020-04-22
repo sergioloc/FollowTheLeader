@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
+  m_Name: RemoteConfigDataStoreAsset
+  m_EditorClassIdentifier: 
+  rsKeyList:
+  - metadata:
+      entityId: 464a603e-9cf2-4980-b5b9-9cd8671ed4eb
+    rs:
+      key: speedObserver
+      type: int
+      value: 10
+  - metadata:
+      entityId: c163904d-6a47-4484-b138-8939088fd8e8
+    rs:
+      key: speedBaby
+      type: int
+      value: 15
+  - metadata:
+      entityId: 8810f543-b72b-4017-9f97-f3af74e50157
+    rs:
+      key: speedFull
+      type: int
+      value: 18
+  - metadata:
+      entityId: 26010280-bca6-4f80-94b2-cbcaa6743a59
+    rs:
+      key: speedAlumni
+      type: int
+      value: 22
+  - metadata:
+      entityId: 60e2cfa2-fdef-4646-ac81-be0268edfb1a
+    rs:
+      key: jumpForce
+      type: int
+      value: 16
+  rsLastCachedKeyList:
+  - metadata:
+      entityId: 464a603e-9cf2-4980-b5b9-9cd8671ed4eb
+    rs:
+      key: speedObserver
+      type: int
+      value: 10
+  - metadata:
+      entityId: c163904d-6a47-4484-b138-8939088fd8e8
+    rs:
+      key: speedBaby
+      type: int
+      value: 15
+  - metadata:
+      entityId: 8810f543-b72b-4017-9f97-f3af74e50157
+    rs:
+      key: speedFull
+      type: int
+      value: 18
+  - metadata:
+      entityId: 26010280-bca6-4f80-94b2-cbcaa6743a59
+    rs:
+      key: speedAlumni
+      type: int
+      value: 22
+  - metadata:
+      entityId: 60e2cfa2-fdef-4646-ac81-be0268edfb1a
+    rs:
+      key: jumpForce
+      type: int
+      value: 16
+  configId: 570e8ce0-82fe-4d64-b1c5-b18ccee4ed45
+  currentEnvironmentId: e3ea547f-82db-42ec-a248-74fccbb4a01a
+  environments:
+  - id: e3ea547f-82db-42ec-a248-74fccbb4a01a
+    appId: 
+    name: Release (Default)
+    description: 
+    createdAt: 2020-04-21T20:03:54Z
+    updatedAt: 2020-04-21T20:03:54Z
+  - id: 75270c25-2a58-4bae-8304-e5afa7193a1b
+    appId: 
+    name: Development
+    description: 
+    createdAt: 2020-04-21T20:03:54Z
+    updatedAt: 2020-04-21T20:03:54Z
+  rulesList: []
+  lastCachedRulesList: []
+  addedRulesIDs: []
+  updatedRulesIDs: []
+  deletedRulesIDs: []

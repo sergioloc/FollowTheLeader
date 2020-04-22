@@ -257,7 +257,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 247415432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c40053f012b41c42940c1922fd7eb09, type: 3}
+  m_Script: {fileID: 11500000, guid: 307a7eac11122d949910dbfa898405aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &255790612
@@ -574,7 +574,7 @@ PrefabInstance:
     - target: {fileID: 6870174888654766766, guid: 0807bc422fe05334a979910790e75f05,
         type: 3}
       propertyPath: m_Text
-      value: Victor
+      value: VICTHOR
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6870174887863364570, guid: 0807bc422fe05334a979910790e75f05, type: 3}
@@ -708,7 +708,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -740, y: 245}
+  m_AnchoredPosition: {x: -750, y: 245}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &312354546
@@ -1310,7 +1310,7 @@ PrefabInstance:
     - target: {fileID: 8527856651058810999, guid: 3a76ab17f68bbcb44931ecdb7c4b56cd,
         type: 3}
       propertyPath: m_Text
-      value: 'Full
+      value: 'FULL
 
 '
       objectReference: {fileID: 0}
@@ -1562,7 +1562,7 @@ PrefabInstance:
     - target: {fileID: 6870174888654766766, guid: 0807bc422fe05334a979910790e75f05,
         type: 3}
       propertyPath: m_Text
-      value: Lujan
+      value: "LUJ\xC1N"
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6870174887863364570, guid: 0807bc422fe05334a979910790e75f05, type: 3}
@@ -1765,7 +1765,7 @@ PrefabInstance:
     - target: {fileID: 6870174888654766766, guid: 0807bc422fe05334a979910790e75f05,
         type: 3}
       propertyPath: m_Text
-      value: Dani
+      value: DANI
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6870174887863364570, guid: 0807bc422fe05334a979910790e75f05, type: 3}
@@ -2016,7 +2016,7 @@ PrefabInstance:
     - target: {fileID: 8527856651058810999, guid: 3a76ab17f68bbcb44931ecdb7c4b56cd,
         type: 3}
       propertyPath: m_Text
-      value: 'Baby
+      value: 'BABY
 
 '
       objectReference: {fileID: 0}
@@ -2276,7 +2276,7 @@ PrefabInstance:
     - target: {fileID: 6870174888654766766, guid: 0807bc422fe05334a979910790e75f05,
         type: 3}
       propertyPath: m_Text
-      value: Adri
+      value: ADRI
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6870174887863364570, guid: 0807bc422fe05334a979910790e75f05, type: 3}
@@ -2294,6 +2294,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1235262131}
     m_Modifications:
+    - target: {fileID: 2951386729581345347, guid: dd2ef50a729515946bd83734bea4a34b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2951386729760968359, guid: dd2ef50a729515946bd83734bea4a34b,
         type: 3}
       propertyPath: m_Name
@@ -2715,6 +2720,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6870174888097858890, guid: 0807bc422fe05334a979910790e75f05,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870174888097858890, guid: 0807bc422fe05334a979910790e75f05,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.082352936
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870174888097858890, guid: 0807bc422fe05334a979910790e75f05,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.9777355
+      objectReference: {fileID: 0}
     - target: {fileID: 6870174888654766766, guid: 0807bc422fe05334a979910790e75f05,
         type: 3}
       propertyPath: m_Text
@@ -2936,7 +2956,7 @@ PrefabInstance:
     - target: {fileID: 6870174888654766766, guid: 0807bc422fe05334a979910790e75f05,
         type: 3}
       propertyPath: m_Text
-      value: 'Sandia
+      value: 'SANDIA
 
 '
       objectReference: {fileID: 0}
@@ -3146,7 +3166,7 @@ PrefabInstance:
     - target: {fileID: 6870174888654766766, guid: 0807bc422fe05334a979910790e75f05,
         type: 3}
       propertyPath: m_Text
-      value: Richi
+      value: RICHI
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6870174887863364570, guid: 0807bc422fe05334a979910790e75f05, type: 3}
@@ -3346,6 +3366,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6870174888097858890, guid: 0807bc422fe05334a979910790e75f05,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.98039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870174888097858890, guid: 0807bc422fe05334a979910790e75f05,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6870174888097858892, guid: 0807bc422fe05334a979910790e75f05,
         type: 3}
       propertyPath: m_IsActive
@@ -3538,9 +3568,7 @@ PrefabInstance:
     - target: {fileID: 8527856651058810999, guid: 3a76ab17f68bbcb44931ecdb7c4b56cd,
         type: 3}
       propertyPath: m_Text
-      value: 'Alumni
-
-'
+      value: ALUMNI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a76ab17f68bbcb44931ecdb7c4b56cd, type: 3}
@@ -3612,7 +3640,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -740, y: 0}
+  m_AnchoredPosition: {x: -750, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1643230910
@@ -4021,7 +4049,7 @@ PrefabInstance:
     - target: {fileID: 6870174888654766766, guid: 0807bc422fe05334a979910790e75f05,
         type: 3}
       propertyPath: m_Text
-      value: Carlos
+      value: CARLOS
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6870174887863364570, guid: 0807bc422fe05334a979910790e75f05, type: 3}
@@ -4393,7 +4421,7 @@ PrefabInstance:
     - target: {fileID: 6870174888654766766, guid: 0807bc422fe05334a979910790e75f05,
         type: 3}
       propertyPath: m_Text
-      value: Alan
+      value: ALAN
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6870174887863364570, guid: 0807bc422fe05334a979910790e75f05, type: 3}
@@ -4649,7 +4677,7 @@ PrefabInstance:
     - target: {fileID: 6870174888654766766, guid: 0807bc422fe05334a979910790e75f05,
         type: 3}
       propertyPath: m_Text
-      value: Jorge
+      value: JORGE
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6870174887863364570, guid: 0807bc422fe05334a979910790e75f05, type: 3}
@@ -4794,6 +4822,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1643230910}
+    - target: {fileID: 8527856651058810999, guid: 3a76ab17f68bbcb44931ecdb7c4b56cd,
+        type: 3}
+      propertyPath: m_Text
+      value: 'OBSERVER
+
+'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a76ab17f68bbcb44931ecdb7c4b56cd, type: 3}
 --- !u!95 &4990641385216357499 stripped
@@ -4980,6 +5015,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Morales
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870174888654766766, guid: 0807bc422fe05334a979910790e75f05,
+        type: 3}
+      propertyPath: m_Text
+      value: MORALES
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6870174887863364570, guid: 0807bc422fe05334a979910790e75f05, type: 3}

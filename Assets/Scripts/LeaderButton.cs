@@ -13,8 +13,6 @@ public class LeaderButton : MonoBehaviour
 	
     void Start()
     {
-		PlayerPrefs.SetInt("SergioLock", 0);
-		PlayerPrefs.SetInt("LuciaLock", 0);
 		isMoralesPressed = false;
 		isJorgePressed = false;
 		isMariaPressed = false;
@@ -30,13 +28,13 @@ public class LeaderButton : MonoBehaviour
 			animSergio.SetBool("isLock", true);
 		else{
 			animSergio.SetBool("isLock", false);
-			textSergio.text = "Sergio";
+			textSergio.text = "SERGIO";
 		}
 		if (PlayerPrefs.GetInt("LuciaLock") == 0)
 			animLucia.SetBool("isLock", true);
 		else{
 			animLucia.SetBool("isLock", false);
-			textLucia.text = "Lucia";
+			textLucia.text = "LUCÍA";
 		}	
     }
 	

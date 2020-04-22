@@ -14,7 +14,6 @@ public class RulesController : MonoBehaviour
     }
 
     public void NextPage(){
-        Debug.Log(actualPage);
         if (actualPage == "Page1"){
             page1.SetActive(false);
             page2.SetActive(true);
@@ -27,7 +26,6 @@ public class RulesController : MonoBehaviour
     }
 
     public void PreviusPage(){
-        Debug.Log(actualPage);
         if (actualPage == "Page2"){
             page1.SetActive(true);
             page2.SetActive(false);
