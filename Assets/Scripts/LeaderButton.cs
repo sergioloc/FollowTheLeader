@@ -13,6 +13,8 @@ public class LeaderButton : MonoBehaviour
 	
     void Start()
     {
+		GameValues.leader = 0;
+		GameValues.difficulty = 0;
 		isMoralesPressed = false;
 		isJorgePressed = false;
 		isMariaPressed = false;

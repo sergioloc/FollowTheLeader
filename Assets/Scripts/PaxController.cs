@@ -29,9 +29,16 @@ public class PaxController : MonoBehaviour
         isAlive = true;
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-		speed = GameValues.speed;
-        jumpForce = GameValues.jumpForce;
-        rb2d.gravityScale = GameValues.gravity;
+		if (GameValues.speed != 0){
+            speed = GameValues.speed;
+            jumpForce = GameValues.jumpForce;
+            rb2d.gravityScale = GameValues.gravity;
+        }
+        else{
+            speed = 10;
+            jumpForce = 16;
+            rb2d.gravityScale = 5;
+        }
     }
 
     void FixedUpdate()
@@ -56,7 +63,6 @@ public class PaxController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.tag == "Shadow")
         {
-            Debug.Log("Shadow");
             Die();
         }
     }
@@ -67,19 +73,13 @@ public class PaxController : MonoBehaviour
         {
            StartCoroutine(Win());
         }
-        else if (collision.gameObject.tag == "DeadPAX" || collision.gameObject.tag == "DeadZone"){
-            Die();
+        else if (collision.gameObject.tag == "DeadZone" || collision.gameObject.tag == "DeadPAX")
+        {
+           Die();
         }
         else if (collision.gameObject.tag == "Horde" && !initialGroup)
         {
 			DelayRunning();
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D collision){
-        if (collision.gameObject.tag == "Win")
-        {
-           StartCoroutine(Win());
         }
     }
 	
@@ -126,6 +126,7 @@ public class PaxController : MonoBehaviour
     private void Die(){
         if (isAlive){
             isAlive = false;
+            Instantiate(dieParticle, gameObject.transform.position, gameObject.transform.rotation);
             dieParticle.SetActive(true);
             GameValues.numPax--;
 		    Destroy(gameObject);

@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 575863693}
   - component: {fileID: 575863694}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Subtitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,7 +153,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1442026259}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -571,7 +571,7 @@ PrefabInstance:
     - target: {fileID: 3680132551517333556, guid: 1e1b536ea277c194eb02e061c77e8b8c,
         type: 3}
       propertyPath: m_Text
-      value: Credits
+      value: CREDITS
       objectReference: {fileID: 0}
     - target: {fileID: 3680132552158810776, guid: 1e1b536ea277c194eb02e061c77e8b8c,
         type: 3}
@@ -691,7 +691,7 @@ PrefabInstance:
     - target: {fileID: 3680132552158810777, guid: 1e1b536ea277c194eb02e061c77e8b8c,
         type: 3}
       propertyPath: m_Name
-      value: Button (1)
+      value: CreditsButton
       objectReference: {fileID: 0}
     - target: {fileID: 3680132552158810779, guid: 1e1b536ea277c194eb02e061c77e8b8c,
         type: 3}
@@ -893,8 +893,8 @@ RectTransform:
   m_Children:
   - {fileID: 1355066569}
   - {fileID: 2078820818}
-  - {fileID: 596220985}
   - {fileID: 575863690}
+  - {fileID: 596220985}
   - {fileID: 1409623887}
   - {fileID: 1987415270}
   - {fileID: 2105841208}
@@ -1191,6 +1191,7 @@ GameObject:
   - component: {fileID: 1755618423}
   - component: {fileID: 1755618422}
   - component: {fileID: 1755618425}
+  - component: {fileID: 1755618426}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1273,6 +1274,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cab3700c53f7d142887b216c527e1a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1755618426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755618421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 307a7eac11122d949910dbfa898405aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1802550822
@@ -1724,7 +1737,7 @@ PrefabInstance:
     - target: {fileID: 3680132552158810776, guid: 1e1b536ea277c194eb02e061c77e8b8c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3680132552158810776, guid: 1e1b536ea277c194eb02e061c77e8b8c,
         type: 3}
@@ -1804,7 +1817,7 @@ PrefabInstance:
     - target: {fileID: 3680132552158810777, guid: 1e1b536ea277c194eb02e061c77e8b8c,
         type: 3}
       propertyPath: m_Name
-      value: Button
+      value: PlayButton
       objectReference: {fileID: 0}
     - target: {fileID: 3680132552158810779, guid: 1e1b536ea277c194eb02e061c77e8b8c,
         type: 3}

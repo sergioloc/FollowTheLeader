@@ -57,6 +57,8 @@ public class DifficultyButton : MonoBehaviour
 			isFullPressed = false;
 			isAlumniPressed = false;
 			GameValues.difficulty = 1;
+			GameValues.speed = GameValues.speedObserver;
+			GameValues.gravity = 5;
 		}
 	}
 
@@ -74,6 +76,8 @@ public class DifficultyButton : MonoBehaviour
 			isFullPressed = false;
 			isAlumniPressed = false;
 			GameValues.difficulty = 2;
+			GameValues.speed = GameValues.speedBaby;
+			GameValues.gravity = 6;
 		}
 	}
 
@@ -91,6 +95,8 @@ public class DifficultyButton : MonoBehaviour
 			isFullPressed = true;
 			isAlumniPressed = false;
 			GameValues.difficulty = 3;
+			GameValues.speed = GameValues.speedFull;
+			GameValues.gravity = 6;
 		}
 	}
 
@@ -108,6 +114,9 @@ public class DifficultyButton : MonoBehaviour
 			isFullPressed = false;
 			isAlumniPressed = true;
 			GameValues.difficulty = 4;
+			GameValues.speed = GameValues.speedAlumni;
+			GameValues.gravity = 7;
+			GameValues.jumpForce = GameValues.jumpForce + 2;
 		}
 	}
 }

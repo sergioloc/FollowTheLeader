@@ -28,11 +28,18 @@ public class LeaderController : MonoBehaviour
 	
     void Start()
     {
-        isAlive = true;
+        isAlive = GameValues.isLeaderAlive = true;
         rb2d = GetComponent<Rigidbody2D>();
-        speed = GameValues.speed;
-        jumpForce = GameValues.jumpForce;
-        rb2d.gravityScale = GameValues.gravity;
+        if (GameValues.speed != 0){
+            speed = GameValues.speed;
+            jumpForce = GameValues.jumpForce;
+            rb2d.gravityScale = GameValues.gravity;
+        }
+        else{
+            speed = 10;
+            jumpForce = 16;
+            rb2d.gravityScale = 5;
+        }
         SetLeader();
         SetAmmo();
     }
@@ -189,6 +196,7 @@ public class LeaderController : MonoBehaviour
 
     private void Die(){
         isAlive = false;
+        GameValues.isLeaderAlive = false;
         die.SetActive(true);
         characters.SetActive(false);
         paxes.SetActive(false);
@@ -198,7 +206,7 @@ public class LeaderController : MonoBehaviour
     IEnumerator GameOver(){
         yield return new WaitForSeconds(2f);
         gameOver.SetActive(true);
-        description.text = "Your leader died!";
+        description.text = "YOUR LEADER DIED!";
     }
 
     private void SetLeader(){

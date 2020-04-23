@@ -11,7 +11,13 @@ public class GameValues : MonoBehaviour
 	static public bool paxWaiting = true;
 	static public bool skipRules = false;
 	static public Animator animator;
+	static public bool isLeaderAlive;
+
 	static public int speed;
+	static public int speedObserver;
+	static public int speedBaby;
+	static public int speedFull;
+	static public int speedAlumni;
 	static public int jumpForce;
 	static public int gravity;
 }

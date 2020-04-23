@@ -16,7 +16,7 @@ public class OcclusionCulling : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "SafeZone")
+        if (collision.gameObject.tag == "SafeZone" && GameValues.isLeaderAlive)
         {
             DisableAll();
         }

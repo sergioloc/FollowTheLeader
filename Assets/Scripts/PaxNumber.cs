@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PaxNumber : MonoBehaviour
 {
-    public GameObject leader, pax, gameOver;
+    public GameObject characters, pax, gameOver;
     private Text paxText;
     public Text description;
     
@@ -18,7 +18,7 @@ public class PaxNumber : MonoBehaviour
     {
         if (GameValues.numPax < 1){
             paxText.text = "PAX: 0";
-            if (leader.activeSelf)
+            if (characters.activeSelf)
                 Die();
         }
         else {
@@ -28,13 +28,13 @@ public class PaxNumber : MonoBehaviour
     
     private void Die(){
         StartCoroutine(GameOver());
-        leader.SetActive(false);
+        characters.SetActive(false);
         pax.SetActive(false);
     }
 
     IEnumerator GameOver(){
         yield return new WaitForSeconds(1f);
-        description.text = "All your PAXes died!";
+        description.text = "ALL YOUR PAX DIED!";
         gameOver.SetActive(true);
     }
 }

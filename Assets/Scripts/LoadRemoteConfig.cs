@@ -17,23 +17,9 @@ public class LoadRemoteConfig : MonoBehaviour
 
     private void SetVariables(ConfigResponse response){
         GameValues.jumpForce = ConfigManager.appConfig.GetInt("jumpForce");
-
-        if (GameValues.difficulty == 4){
-            GameValues.speed = ConfigManager.appConfig.GetInt("speedAlumni");
-            GameValues.jumpForce = ConfigManager.appConfig.GetInt("jumpForce") + 2;
-            GameValues.gravity = 7;
-        }
-        else if (GameValues.difficulty == 3){
-            GameValues.speed = ConfigManager.appConfig.GetInt("speedFull");
-            GameValues.gravity = 6;
-        }
-        else if (GameValues.difficulty == 2){
-            GameValues.speed = ConfigManager.appConfig.GetInt("speedBaby");
-            GameValues.gravity = 6;
-        }
-        else {
-            GameValues.speed = ConfigManager.appConfig.GetInt("speedObserver");
-            GameValues.gravity = 5;
-        }
+        GameValues.speedObserver = ConfigManager.appConfig.GetInt("speedObserver");
+        GameValues.speedBaby = ConfigManager.appConfig.GetInt("speedBaby");
+        GameValues.speedFull = ConfigManager.appConfig.GetInt("speedFull");
+        GameValues.speedAlumni = ConfigManager.appConfig.GetInt("speedAlumni");
     }
 }
