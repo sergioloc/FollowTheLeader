@@ -99,7 +99,7 @@ public class LeaderButton : MonoBehaviour
 		else {
 			GameValues.leader = value;
 			anim.SetBool("isPressed", true);
-			if (animPrev != null)
+			if (animPrev != null && animPrev != anim)
 				animPrev.SetBool("isPressed", false);
 			animPrev = anim;
 			return true;
